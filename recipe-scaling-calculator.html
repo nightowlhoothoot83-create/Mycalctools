@@ -1,24 +1,24 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Recipe Scaling Calculator - Resize Ingredients | MyCalcTools</title><meta name="description" content="Scale recipe ingredients up or down by servings, batch size or multiplier. Helpful for meal prep, baking and family cooking."><link rel="canonical" href="https://mycalctools.net/recipe-scaling-calculator.html"><meta name="robots" content="index, follow, max-image-preview:large"><meta name="google-adsense-account" content="ca-pub-1904958390525375"><link rel="stylesheet" href="/style.css"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1904958390525375" crossorigin="anonymous"></script></head><body><div id="brand-strip"></div><div id="nav"></div><div class="tool-page"><div class="container"><nav class="breadcrumb"><a href="/index.html">Home</a> &gt; <a href="/index.html#kitchen">Kitchen</a> &gt; Recipe Scaling Calculator</nav><div class="tool-header"><div class="tool-header-icon" style="background:rgba(251,146,60,0.12);border:1px solid rgba(251,146,60,0.3)">x</div><h1>Recipe Scaling Calculator</h1><p>Resize a recipe from its original servings to the number of servings you want to make.</p><div style="margin-top:10px"><span class="tag kitchen">Serving Resize</span><span class="tag kitchen">Batch Cooking</span></div></div><div class="tool-layout"><div class="calc-card"><div class="field"><label>Original Servings</label><input type="number" id="origServ" value="4" min="0.1" step="0.1"></div><div class="field"><label>New Servings</label><input type="number" id="newServ" value="6" min="0.1" step="0.1"></div><div class="field"><label>Ingredient Amount</label><input type="number" id="ingAmt" value="2" min="0" step="0.01"></div><div class="field"><label>Unit</label><input type="text" id="ingUnit" value="cups"></div><button class="btn-calc" onclick="calcRecipeScale()">Scale Recipe</button><div class="result-box kitchen" id="scaleR"><div class="result-value kitchen" id="scaleVal"></div><div class="result-label">scaled ingredient amount</div><div class="result-grid" id="scaleGrid"></div></div></div><div class="sidebar"><div class="info-card"><h3>Quick guide</h3><p>Use the same multiplier for every ingredient in your recipe. For baking, round carefully and keep an eye on pan size and cooking time.</p></div></div></div><section class="tool-info-section" aria-label="Tool information">
   <div class="tool-info-panel">
     <h2>About this tool</h2>
-    <p>Scale ingredients when you need more or fewer servings than the original recipe provides. MyCalcTools calculators are designed for quick everyday estimates with clear inputs, instant results and no account required. Results are provided for general information and planning, not as professional financial, medical, legal or trade advice.</p>
+    <p>Scale ingredients when you need more or fewer servings than the original recipe provides. This tool is built for quick, practical use in the kitchen — no account, no fuss, just a fast conversion or calculation when you need one.</p>
   </div>
   <div class="tool-info-panel">
     <h2>How to use it</h2>
     <ol>
-      <li>Enter the values requested in the calculator fields.</li>
-      <li>Choose the option that best matches your situation, unit or goal.</li>
-      <li>Press the calculate button and review the result summary.</li>
-      <li>Adjust your inputs to compare different scenarios.</li>
+      <li>Enter your quantities, sizes or timings into the fields.</li>
+      <li>Select the unit or option that matches what you're working with.</li>
+      <li>Calculate to get your converted amount or adjusted timing.</li>
+      <li>Tweak the numbers if you're scaling a recipe up or down.</li>
     </ol>
   </div>
   <div class="tool-info-panel">
     <h2>Common use cases</h2>
     <ul>
-      <li>Checking a quick estimate before making a decision.</li>
-      <li>Comparing two or more everyday scenarios side by side.</li>
-      <li>Planning budgets, meals, projects, dates or personal routines.</li>
-      <li>Double-checking manual calculations with a simple online reference.</li>
+      <li>Scaling a recipe up or down for a different number of servings.</li>
+      <li>Converting between units when a recipe uses ones you don't have measures for.</li>
+      <li>Getting cooking times right for different appliances or ingredient sizes.</li>
+      <li>Double-checking a substitution or conversion mid-recipe.</li>
     </ul>
   </div>
 </section><div class="related-section"><h2>Related Tools</h2><div class="related-grid"><a href="/cups-grams-calculator.html" class="related-card">g Cups to Grams Converter</a><a href="/pan-size-converter.html" class="related-card">pan Pan Size Converter</a></div></div></div></div><script>function calcRecipeScale(){var o=parseFloat(document.getElementById('origServ').value)||0;var n=parseFloat(document.getElementById('newServ').value)||0;var a=parseFloat(document.getElementById('ingAmt').value)||0;var u=document.getElementById('ingUnit').value||'units';if(!o||!n){return;}var m=n/o;var r=a*m;document.getElementById('scaleR').className='result-box kitchen visible';document.getElementById('scaleVal').textContent=(Math.round(r*100)/100)+' '+u;document.getElementById('scaleGrid').innerHTML='<div class="result-item"><div class="result-item-label">Multiplier</div><div class="result-item-value">'+(Math.round(m*100)/100)+'x</div></div><div class="result-item"><div class="result-item-label">Original</div><div class="result-item-value">'+a+' '+u+' for '+o+' servings</div></div><div class="result-item"><div class="result-item-label">New batch</div><div class="result-item-value">'+n+' servings</div></div>';}</script>

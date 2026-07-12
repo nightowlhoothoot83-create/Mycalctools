@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="en"><head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HECS-HELP Repayment Calculator — FY2024-25 Thresholds | MyCalcTools</title>
-<meta name="description" content="Calculate your annual HECS-HELP repayment amount and years to pay off based on ATO FY2024-25 thresholds.">
+<title>HECS-HELP Repayment Calculator — FY2026-27 Thresholds | MyCalcTools</title>
+<meta name="description" content="Calculate your annual HECS-HELP repayment amount and years to pay off based on ATO FY2026-27 thresholds.">
 <link rel="canonical" href="https://mycalctools.net/hecs-help-calculator.html">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="google-adsense-account" content="ca-pub-1904958390525375">
@@ -16,7 +16,7 @@
 <div class="tool-header">
   <div class="tool-header-icon" style="background:rgba(96,165,250,0.12);border:1px solid rgba(96,165,250,0.3)">🎓</div>
   <h1>HECS-HELP Calculator</h1>
-  <p>Calculate HECS repayments using ATO FY2024-25 repayment thresholds.</p>
+  <p>Calculate HECS repayments using ATO FY2026-27 repayment thresholds.</p>
   <div style="margin-top:10px"><span class="tag finance">HECS Thresholds</span><span class="tag finance">Indexation</span></div>
 </div>
 <div class="tool-layout">
@@ -32,31 +32,31 @@
 
 </div>
 <div class="sidebar">
-  <div class="info-card"><h3>About</h3><p>Calculate HECS repayments using ATO FY2024-25 repayment thresholds.</p></div>
+  <div class="info-card"><h3>About</h3><p>Calculate HECS repayments using ATO FY2026-27 repayment thresholds.</p></div>
   
 </div>
 </div>
 <section class="tool-info-section" aria-label="Tool information">
   <div class="tool-info-panel">
     <h2>About this tool</h2>
-    <p>Calculate HECS repayments using ATO FY2024-25 repayment thresholds. MyCalcTools calculators are designed for quick everyday estimates with clear inputs, instant results and no account required. Results are provided for general information and planning, not as professional financial, medical, legal or trade advice.</p>
+    <p>Calculate HECS repayments using ATO FY2026-27 repayment thresholds. This tool gives a general estimate to help with everyday planning — for anything with real financial consequences, it's worth confirming the numbers with a professional.</p>
   </div>
   <div class="tool-info-panel">
     <h2>How to use it</h2>
     <ol>
-      <li>Enter the values requested in the calculator fields.</li>
-      <li>Choose the option that best matches your situation, unit or goal.</li>
-      <li>Press the calculate button and review the result summary.</li>
-      <li>Adjust your inputs to compare different scenarios.</li>
+      <li>Fill in the amounts and rates relevant to your situation.</li>
+      <li>Adjust the term, frequency or scenario fields to match your circumstances.</li>
+      <li>Hit calculate to see the full breakdown, not just a single figure.</li>
+      <li>Try a few different scenarios side by side before making a decision.</li>
     </ol>
   </div>
   <div class="tool-info-panel">
     <h2>Common use cases</h2>
     <ul>
-      <li>Checking a quick estimate before making a decision.</li>
-      <li>Comparing two or more everyday scenarios side by side.</li>
-      <li>Planning budgets, meals, projects, dates or personal routines.</li>
-      <li>Double-checking manual calculations with a simple online reference.</li>
+      <li>Comparing a few different offers or rates before committing.</li>
+      <li>Working out whether a purchase or loan fits your budget.</li>
+      <li>Getting a ballpark figure before speaking to a broker or accountant.</li>
+      <li>Checking your own numbers against what a provider has quoted you.</li>
     </ul>
   </div>
 </section>
@@ -72,7 +72,7 @@
     <li>The calculator applies the current ATO repayment rates to show your compulsory annual repayment and estimated payoff timeline.</li>
   </ol>
   <h3 style="margin-top:20px;font-size:1.05rem">How HECS-HELP Repayments Work</h3>
-  <p>HECS-HELP debt is indexed each year on 1 June to reflect changes in the Consumer Price Index (CPI). This means your debt can increase over time if your compulsory repayments do not keep pace with indexation. Voluntary repayments can be made at any time through the ATO online services in myGov and directly reduce your debt balance. Repayment rates start at 1% of income at the minimum threshold and increase progressively up to 10% for high incomes. Unlike most debt, HECS-HELP has no interest component beyond CPI indexation, and the debt is cancelled if you pass away before full repayment.</p>
+  <p>HECS-HELP debt is indexed each year on 1 June to reflect changes in the Consumer Price Index (CPI). This means your debt can increase over time if your compulsory repayments do not keep pace with indexation. Voluntary repayments can be made at any time through the ATO online services in myGov and directly reduce your debt balance. Since the 1 July 2025 reform, repayments use a marginal system: 15% on repayment income above $69,528, rising to 17% above $129,717, and 10% of total repayment income above $186,050. You only pay the higher rate on the portion above each threshold, similar to income tax brackets. Unlike most debt, HECS-HELP has no interest component beyond CPI/WPI indexation, and the debt is cancelled if you pass away before full repayment.</p>
   <div class="faq-item" style="margin-top:20px"><button class="faq-question">Should I make voluntary HECS payments? <span class="faq-chevron">&#9660;</span></button>
   <div class="faq-answer"><p>Voluntary repayments can be worthwhile if your debt is growing faster from CPI indexation than you are repaying it compulsorily. In years of high inflation, this can happen on moderate incomes. However, since HECS carries no true interest rate, paying it down faster is generally lower priority than building an emergency fund, reducing high-interest credit card debt, or contributing to superannuation. Assess your full financial picture first.</p></div></div>
 </div>
@@ -81,18 +81,17 @@
   function calcHECS(){
     var debt=parseFloat(document.getElementById('hecsDebt').value)||0;
     var inc=parseFloat(document.getElementById('hecsInc').value)||0;
-    var rate=0;
-    if(inc>=149000)rate=0.10;else if(inc>=132000)rate=0.095;else if(inc>=117000)rate=0.09;
-    else if(inc>=103000)rate=0.085;else if(inc>=92000)rate=0.08;else if(inc>=81000)rate=0.075;
-    else if(inc>=72000)rate=0.065;else if(inc>=67000)rate=0.055;else if(inc>=62000)rate=0.045;
-    else if(inc>=57000)rate=0.03;else if(inc>=51550)rate=0.01;
-    var annual=inc*rate;
+    var annual=0;
+    if(inc>186050) annual=inc*0.10;
+    else if(inc>129717) annual=9028+(inc-129717)*0.17;
+    else if(inc>69528) annual=(inc-69528)*0.15;
+    var rate=inc>0?annual/inc:0;
     var years=annual>0?Math.ceil(debt/annual):0;
     document.getElementById('hecsR').className='result-box finance visible';
     document.getElementById('hecsRVal').textContent='$'+fmt(annual);
     document.getElementById('hecsRLbl').textContent='annual HECS repayment';
     document.getElementById('hecsRGrid').innerHTML=
-      '<div class="result-item"><div class="result-item-label">Repayment Rate</div><div class="result-item-value">'+(rate*100).toFixed(1)+'%</div></div>'+
+      '<div class="result-item"><div class="result-item-label">Effective Rate</div><div class="result-item-value">'+(rate*100).toFixed(1)+'%</div></div>'+
       '<div class="result-item"><div class="result-item-label">Annual Amount</div><div class="result-item-value">$'+fmt(annual)+'</div></div>'+
       '<div class="result-item"><div class="result-item-label">Weekly Deduction</div><div class="result-item-value">$'+fmt(annual/52)+'</div></div>'+
       '<div class="result-item"><div class="result-item-label">Years to Repay</div><div class="result-item-value">'+(years>0?years+' yrs':'Below threshold')+'</div></div>';

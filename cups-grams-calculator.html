@@ -1,24 +1,24 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Cups to Grams Converter - Kitchen Ingredients | MyCalcTools</title><meta name="description" content="Convert cups to grams or grams to cups for common kitchen ingredients including flour, sugar, butter, oats, rice and cocoa."><link rel="canonical" href="https://mycalctools.net/cups-grams-calculator.html"><meta name="robots" content="index, follow, max-image-preview:large"><meta name="google-adsense-account" content="ca-pub-1904958390525375"><link rel="stylesheet" href="/style.css"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1904958390525375" crossorigin="anonymous"></script></head><body><div id="brand-strip"></div><div id="nav"></div><div class="tool-page"><div class="container"><nav class="breadcrumb"><a href="/index.html">Home</a> &gt; <a href="/index.html#kitchen">Kitchen</a> &gt; Cups to Grams Converter</nav><div class="tool-header"><div class="tool-header-icon" style="background:rgba(251,146,60,0.12);border:1px solid rgba(251,146,60,0.3)">g</div><h1>Cups to Grams Converter</h1><p>Convert cups to grams or grams to cups using common ingredient densities.</p><div style="margin-top:10px"><span class="tag kitchen">Cups to Grams</span><span class="tag kitchen">Grams to Cups</span></div></div><div class="tool-layout"><div class="calc-card"><div class="toggle-row"><button class="toggle-btn active" id="cgCBtn" onclick="cgMode('cups')">Cups to grams</button><button class="toggle-btn" id="cgGBtn" onclick="cgMode('grams')">Grams to cups</button></div><div class="field"><label>Ingredient</label><select id="cgIngredient"><option value="120">All-purpose flour</option><option value="200">Granulated sugar</option><option value="220">Brown sugar packed</option><option value="227">Butter</option><option value="90">Rolled oats</option><option value="185">Uncooked rice</option><option value="85">Cocoa powder</option><option value="340">Honey</option></select></div><div class="field"><label id="cgLabel">Cups</label><input type="number" id="cgAmount" value="1" min="0" step="0.01"></div><button class="btn-calc" onclick="calcCupsGrams()">Convert</button><div class="result-box kitchen" id="cgR"><div class="result-value kitchen" id="cgVal"></div><div class="result-label" id="cgResultLabel"></div><div class="result-grid" id="cgGrid"></div></div></div><div class="sidebar"><div class="info-card"><h3>Ingredient note</h3><p>Weights are practical kitchen estimates. Scooping method, brand and ingredient texture can change the real weight, especially for flour and powders.</p></div></div></div><section class="tool-info-section" aria-label="Tool information">
   <div class="tool-info-panel">
     <h2>About this tool</h2>
-    <p>Convert between volume and weight for common cooking and baking ingredients. MyCalcTools calculators are designed for quick everyday estimates with clear inputs, instant results and no account required. Results are provided for general information and planning, not as professional financial, medical, legal or trade advice.</p>
+    <p>Convert between volume and weight for common cooking and baking ingredients. This tool is built for quick, practical use in the kitchen — no account, no fuss, just a fast conversion or calculation when you need one.</p>
   </div>
   <div class="tool-info-panel">
     <h2>How to use it</h2>
     <ol>
-      <li>Enter the values requested in the calculator fields.</li>
-      <li>Choose the option that best matches your situation, unit or goal.</li>
-      <li>Press the calculate button and review the result summary.</li>
-      <li>Adjust your inputs to compare different scenarios.</li>
+      <li>Enter your quantities, sizes or timings into the fields.</li>
+      <li>Select the unit or option that matches what you're working with.</li>
+      <li>Calculate to get your converted amount or adjusted timing.</li>
+      <li>Tweak the numbers if you're scaling a recipe up or down.</li>
     </ol>
   </div>
   <div class="tool-info-panel">
     <h2>Common use cases</h2>
     <ul>
-      <li>Checking a quick estimate before making a decision.</li>
-      <li>Comparing two or more everyday scenarios side by side.</li>
-      <li>Planning budgets, meals, projects, dates or personal routines.</li>
-      <li>Double-checking manual calculations with a simple online reference.</li>
+      <li>Scaling a recipe up or down for a different number of servings.</li>
+      <li>Converting between units when a recipe uses ones you don't have measures for.</li>
+      <li>Getting cooking times right for different appliances or ingredient sizes.</li>
+      <li>Double-checking a substitution or conversion mid-recipe.</li>
     </ul>
   </div>
 </section><div class="related-section"><h2>Related Tools</h2><div class="related-grid"><a href="/recipe-scaling-calculator.html" class="related-card">x Recipe Scaling Calculator</a><a href="/converters/volume-converter.html" class="related-card">Volume Converter</a></div></div></div></div><script>var cg='cups';function cgMode(m){cg=m;document.getElementById('cgCBtn').className='toggle-btn'+(m==='cups'?' active':'');document.getElementById('cgGBtn').className='toggle-btn'+(m==='grams'?' active':'');document.getElementById('cgLabel').textContent=m==='cups'?'Cups':'Grams';}function calcCupsGrams(){var dens=parseFloat(document.getElementById('cgIngredient').value)||0;var a=parseFloat(document.getElementById('cgAmount').value)||0;var r=cg==='cups'?a*dens:a/dens;document.getElementById('cgR').className='result-box kitchen visible';document.getElementById('cgVal').textContent=cg==='cups'?(Math.round(r)+' g'):(Math.round(r*100)/100+' cups');document.getElementById('cgResultLabel').textContent=cg==='cups'?'estimated weight':'estimated volume';document.getElementById('cgGrid').innerHTML='<div class="result-item"><div class="result-item-label">Reference</div><div class="result-item-value">1 cup = '+dens+' g</div></div><div class="result-item"><div class="result-item-label">Input</div><div class="result-item-value">'+a+' '+(cg==='cups'?'cups':'g')+'</div></div>';}</script>

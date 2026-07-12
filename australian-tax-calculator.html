@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="en"><head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Australian Tax Calculator — ATO FY2024-25 | MyCalcTools</title>
-<meta name="description" content="Calculate your Australian income tax, Medicare levy, LITO offset and take-home pay for FY2024-25. ATO-aligned calculator.">
+<title>Australian Tax Calculator — ATO FY2026-27 | MyCalcTools</title>
+<meta name="description" content="Calculate your Australian income tax, Medicare levy, LITO offset and take-home pay for FY2026-27. ATO-aligned calculator.">
 <link rel="canonical" href="https://mycalctools.net/australian-tax-calculator.html">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="google-adsense-account" content="ca-pub-1904958390525375">
@@ -21,8 +21,8 @@
 <div class="tool-header">
   <div class="tool-header-icon" style="background:rgba(96,165,250,0.12);border:1px solid rgba(96,165,250,0.3)">🦘</div>
   <h1>Australian Tax Calculator</h1>
-  <p>ATO-aligned FY2024-25 tax calculator including LITO offset and Medicare levy.</p>
-  <div style="margin-top:10px"><span class="tag finance">ATO 2024-25</span><span class="tag finance">LITO + Medicare</span></div>
+  <p>ATO-aligned FY2026-27 tax calculator including LITO offset and Medicare levy.</p>
+  <div style="margin-top:10px"><span class="tag finance">ATO 2026-27</span><span class="tag finance">LITO + Medicare</span></div>
 </div>
 <div class="tool-layout">
 <div class="calc-card">
@@ -39,7 +39,7 @@
 </div>
 <div class="sidebar">
   <div class="info-card">
-    <h3>FY2024-25 Tax Brackets</h3>
+    <h3>FY2026-27 Tax Brackets</h3>
     <ul>
       <li>$0–$18,200 — 0%</li>
       <li>$18,201–$45,000 — 19%</li>
@@ -55,24 +55,24 @@
 <section class="tool-info-section" aria-label="Tool information">
   <div class="tool-info-panel">
     <h2>About this tool</h2>
-    <p>ATO-aligned FY2024-25 tax calculator including LITO offset and Medicare levy. MyCalcTools calculators are designed for quick everyday estimates with clear inputs, instant results and no account required. Results are provided for general information and planning, not as professional financial, medical, legal or trade advice.</p>
+    <p>ATO-aligned FY2026-27 tax calculator including LITO offset and Medicare levy. This tool gives a general estimate to help with everyday planning — for anything with real financial consequences, it's worth confirming the numbers with a professional.</p>
   </div>
   <div class="tool-info-panel">
     <h2>How to use it</h2>
     <ol>
-      <li>Enter the values requested in the calculator fields.</li>
-      <li>Choose the option that best matches your situation, unit or goal.</li>
-      <li>Press the calculate button and review the result summary.</li>
-      <li>Adjust your inputs to compare different scenarios.</li>
+      <li>Fill in the amounts and rates relevant to your situation.</li>
+      <li>Adjust the term, frequency or scenario fields to match your circumstances.</li>
+      <li>Hit calculate to see the full breakdown, not just a single figure.</li>
+      <li>Try a few different scenarios side by side before making a decision.</li>
     </ol>
   </div>
   <div class="tool-info-panel">
     <h2>Common use cases</h2>
     <ul>
-      <li>Checking a quick estimate before making a decision.</li>
-      <li>Comparing two or more everyday scenarios side by side.</li>
-      <li>Planning budgets, meals, projects, dates or personal routines.</li>
-      <li>Double-checking manual calculations with a simple online reference.</li>
+      <li>Comparing a few different offers or rates before committing.</li>
+      <li>Working out whether a purchase or loan fits your budget.</li>
+      <li>Getting a ballpark figure before speaking to a broker or accountant.</li>
+      <li>Checking your own numbers against what a provider has quoted you.</li>
     </ul>
   </div>
 </section>
@@ -95,10 +95,10 @@ function calcATX(){
   var sup=parseFloat(document.getElementById('atxSup').value)||0;
   var taxable=Math.max(0,gross-ded-sup);
   var tax=0;
-  if(taxable>180000) tax=51667+(taxable-180000)*0.45;
-  else if(taxable>120000) tax=29467+(taxable-120000)*0.37;
-  else if(taxable>45000) tax=5092+(taxable-45000)*0.325;
-  else if(taxable>18200) tax=(taxable-18200)*0.19;
+  if(taxable>190000) tax=51370+(taxable-190000)*0.45;
+  else if(taxable>135000) tax=31020+(taxable-135000)*0.37;
+  else if(taxable>45000) tax=4020+(taxable-45000)*0.30;
+  else if(taxable>18200) tax=(taxable-18200)*0.15;
   var lito=0;
   if(taxable<=37500) lito=700;
   else if(taxable<=45000) lito=700-(taxable-37500)*0.05;
@@ -122,7 +122,7 @@ function calcATX(){
 
 <section class="static-content-section container" data-static-seo="true">
   <h2>About this calculator</h2>
-  <p>Calculate your Australian income tax, Medicare levy, LITO offset and take-home pay for FY2024-25. ATO-aligned calculator. This page is written so the main purpose of the tool is available directly in the HTML, even before any interactive script runs. That helps visitors, search engines and accessibility tools understand what the page does.</p>
+  <p>Calculate your Australian income tax, Medicare levy, LITO offset and take-home pay for FY2026-27. ATO-aligned calculator. This page is written so the main purpose of the tool is available directly in the HTML, even before any interactive script runs. That helps visitors, search engines and accessibility tools understand what the page does.</p>
   <p>Use Australian Tax Calculator when you need a quick answer without creating an account, downloading an app or sending your information to a third party. The tool is designed for everyday planning, comparison and checking, with results shown in the browser as soon as you enter the details.</p>
 
   <h2>How to use Australian Tax Calculator</h2>

@@ -1,24 +1,24 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Pan Size Converter - Baking Pan Area Calculator | MyCalcTools</title><meta name="description" content="Compare baking pan sizes and estimate recipe scaling when changing from one round or rectangular pan to another."><link rel="canonical" href="https://mycalctools.net/pan-size-converter.html"><meta name="robots" content="index, follow, max-image-preview:large"><meta name="google-adsense-account" content="ca-pub-1904958390525375"><link rel="stylesheet" href="/style.css"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1904958390525375" crossorigin="anonymous"></script></head><body><div id="brand-strip"></div><div id="nav"></div><div class="tool-page"><div class="container"><nav class="breadcrumb"><a href="/index.html">Home</a> &gt; <a href="/index.html#kitchen">Kitchen</a> &gt; Pan Size Converter</nav><div class="tool-header"><div class="tool-header-icon" style="background:rgba(251,146,60,0.12);border:1px solid rgba(251,146,60,0.3)">pan</div><h1>Pan Size Converter</h1><p>Compare pan surface area and estimate how much to scale a recipe for a different baking pan.</p><div style="margin-top:10px"><span class="tag kitchen">Pan Area</span><span class="tag kitchen">Baking Scale</span></div></div><div class="tool-layout"><div class="calc-card"><div class="field"><label>Original Pan</label><select id="panOld"><option value="square,20,20">20 cm square</option><option value="rect,23,33">23 x 33 cm rectangle</option><option value="round,20,0">20 cm round</option><option value="round,23,0">23 cm round</option></select></div><div class="field"><label>New Pan</label><select id="panNew"><option value="rect,23,33">23 x 33 cm rectangle</option><option value="square,20,20">20 cm square</option><option value="round,20,0">20 cm round</option><option value="round,23,0">23 cm round</option></select></div><button class="btn-calc" onclick="calcPan()">Compare Pans</button><div class="result-box kitchen" id="panR"><div class="result-value kitchen" id="panVal"></div><div class="result-label">recipe scale factor</div><div class="result-grid" id="panGrid"></div></div></div><div class="sidebar"><div class="info-card"><h3>Baking note</h3><p>Area gives a useful starting point. Depth, batter type and oven behaviour still affect baking time, so check early and use visual doneness cues.</p></div></div></div><section class="tool-info-section" aria-label="Tool information">
   <div class="tool-info-panel">
     <h2>About this tool</h2>
-    <p>Compare common baking pan areas so you can adapt brownies, cakes, slices and tray bakes to the pan you have. MyCalcTools calculators are designed for quick everyday estimates with clear inputs, instant results and no account required. Results are provided for general information and planning, not as professional financial, medical, legal or trade advice.</p>
+    <p>Compare common baking pan areas so you can adapt brownies, cakes, slices and tray bakes to the pan you have. This tool is built for quick, practical use in the kitchen — no account, no fuss, just a fast conversion or calculation when you need one.</p>
   </div>
   <div class="tool-info-panel">
     <h2>How to use it</h2>
     <ol>
-      <li>Enter the values requested in the calculator fields.</li>
-      <li>Choose the option that best matches your situation, unit or goal.</li>
-      <li>Press the calculate button and review the result summary.</li>
-      <li>Adjust your inputs to compare different scenarios.</li>
+      <li>Enter your quantities, sizes or timings into the fields.</li>
+      <li>Select the unit or option that matches what you're working with.</li>
+      <li>Calculate to get your converted amount or adjusted timing.</li>
+      <li>Tweak the numbers if you're scaling a recipe up or down.</li>
     </ol>
   </div>
   <div class="tool-info-panel">
     <h2>Common use cases</h2>
     <ul>
-      <li>Checking a quick estimate before making a decision.</li>
-      <li>Comparing two or more everyday scenarios side by side.</li>
-      <li>Planning budgets, meals, projects, dates or personal routines.</li>
-      <li>Double-checking manual calculations with a simple online reference.</li>
+      <li>Scaling a recipe up or down for a different number of servings.</li>
+      <li>Converting between units when a recipe uses ones you don't have measures for.</li>
+      <li>Getting cooking times right for different appliances or ingredient sizes.</li>
+      <li>Double-checking a substitution or conversion mid-recipe.</li>
     </ul>
   </div>
 </section><div class="related-section"><h2>Related Tools</h2><div class="related-grid"><a href="/recipe-scaling-calculator.html" class="related-card">x Recipe Scaling Calculator</a><a href="/cups-grams-calculator.html" class="related-card">g Cups to Grams Converter</a></div></div></div></div><script>function panArea(v){var p=v.split(',');var type=p[0],a=parseFloat(p[1]),b=parseFloat(p[2]);return type==='round'?Math.PI*Math.pow(a/2,2):a*b;}function calcPan(){var oldA=panArea(document.getElementById('panOld').value);var newA=panArea(document.getElementById('panNew').value);var f=newA/oldA;document.getElementById('panR').className='result-box kitchen visible';document.getElementById('panVal').textContent=(Math.round(f*100)/100)+'x';document.getElementById('panGrid').innerHTML='<div class="result-item"><div class="result-item-label">Original area</div><div class="result-item-value">'+Math.round(oldA)+' sq cm</div></div><div class="result-item"><div class="result-item-label">New area</div><div class="result-item-value">'+Math.round(newA)+' sq cm</div></div><div class="result-item" style="grid-column:1/-1"><div class="result-item-label">Guidance</div><div class="result-item-value" style="font-size:0.82rem;color:var(--muted)">Multiply ingredients by this factor. A thinner bake may cook faster; a deeper bake may need longer.</div></div>';}</script>
