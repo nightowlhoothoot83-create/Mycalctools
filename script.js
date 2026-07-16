@@ -169,6 +169,8 @@ function renderFooter() {
         </div>
       </div>
     </footer>`;
+  var staticFallback = document.getElementById('static-policy-footer');
+  if (staticFallback) staticFallback.style.display = 'none';
 }
 
 function renderGroupFooter() {
