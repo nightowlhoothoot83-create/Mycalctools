@@ -187,7 +187,8 @@ function renderGroupFooter() {
         <a href="/index.html" title="MyCalcTools"><img src="/mycalctools-logo.png" alt="MyCalcTools" class="rs-footer-brand-icon"></a>
         <a href="https://www.mycalendartools.net" target="_blank" rel="noopener" title="MyCalendarTools"><img src="/mycalendartools-logo.png" alt="MyCalendarTools" class="rs-footer-brand-icon"></a>
         <a href="https://www.wheelnamepicker.com.au" target="_blank" rel="noopener" title="WheelNamePicker"><img src="/wheelnamepicker-logo.png" alt="WheelNamePicker" class="rs-footer-brand-icon"></a>
-        <a href="https://zyiacreations.etsy.com" target="_blank" rel="noopener" title="Zyia Creations"><img src="/zyia-creations.png" alt="Zyia Creations" class="rs-footer-brand-icon"></a>
+        <a href="https://zyia-creations.printify.me/" target="_blank" rel="noopener" title="Zyia Creations"><img src="/zyia-creations.png" alt="Zyia Creations" class="rs-footer-brand-icon"></a>
+        <a href="https://zyiacreations.etsy.com" target="_blank" rel="noopener" title="ADG Downloads"><img src="/adg-downloads.png" alt="ADG Downloads" class="rs-footer-brand-icon"></a>
         <a href="https://www.facebook.com/share/18Ma3KsJTo/" target="_blank" rel="noopener" title="Feed the Feed"><img src="/feed-the-feed.jpg" alt="Feed the Feed" class="rs-footer-brand-icon"></a>
         <a href="http://www.youtube.com/@spewcrewkids" target="_blank" rel="noopener" title="Spew Crew Kids"><img src="/spew-crew.jpg" alt="Spew Crew Kids" class="rs-footer-brand-icon" style="background:#000;border-radius:8px"></a>
         <a href="https://mysticalmoments.pages.dev" target="_blank" rel="noopener" title="Mystical Moments"><img src="/mystical-moments.png" alt="Mystical Moments" class="rs-footer-brand-icon"></a>
