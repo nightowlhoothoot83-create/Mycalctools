@@ -53,7 +53,7 @@ function renderBrandStrip() {
   document.getElementById('brand-strip').innerHTML = `
     <div class="rs-brand-strip">
       <div class="rs-brand-left">
-        <a href="https://ravensharppod.pages.dev/login" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:10px;text-decoration:none">
+        <a href="https://pod.raven-sharp.com/login" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:10px;text-decoration:none">
           <img src="/raven-sharp.jpg" alt="Raven Sharp" style="width:32px;height:32px;border-radius:8px;object-fit:cover;filter:drop-shadow(0 0 6px rgba(6,100,255,0.5))">
           <span style="font-weight:700;font-size:0.9rem;color:var(--text,#e8eaf6);letter-spacing:0.02em">Raven Sharp <span style="color:var(--muted,#94a3b8);font-weight:400">Tools</span></span>
         </a>
@@ -192,7 +192,7 @@ function renderGroupFooter() {
         <a href="https://www.facebook.com/share/18Ma3KsJTo/" target="_blank" rel="noopener" title="Feed the Feed"><img src="/feed-the-feed.jpg" alt="Feed the Feed" class="rs-footer-brand-icon"></a>
         <a href="http://www.youtube.com/@spewcrewkids" target="_blank" rel="noopener" title="Spew Crew Kids"><img src="/spew-crew.jpg" alt="Spew Crew Kids" class="rs-footer-brand-icon" style="background:#000;border-radius:8px"></a>
         <a href="https://mysticalmoments.pages.dev" target="_blank" rel="noopener" title="Mystical Moments"><img src="/mystical-moments.png" alt="Mystical Moments" class="rs-footer-brand-icon"></a>
-        <a href="https://ravensharppod.pages.dev/login" target="_blank" rel="noopener" title="RavenSharp"><img src="/ravensharp-logo.jpg" alt="RavenSharp" class="rs-footer-brand-icon"></a>
+        <a href="https://pod.raven-sharp.com/login" target="_blank" rel="noopener" title="RavenSharp"><img src="/ravensharp-logo.jpg" alt="RavenSharp" class="rs-footer-brand-icon"></a>
 
       </div>
       <a href="/about.html#support" class="btn-finance" style="margin-top:8px">Support Us</a>
@@ -273,7 +273,7 @@ function renderRavenSharpPromo() {
   return `<div class="soft-promo-card card container">
     <img src="/ravensharp-logo.jpg" alt="RavenSharp">
     <div><h3>RavenSharp Tools</h3><p>AI-assisted formatting, fixing and file tools from the Ascension Digital Group.</p></div>
-    <a class="btn-finance" href="https://ravensharppod.pages.dev/login" target="_blank" rel="noopener">Open RavenSharp</a>
+    <a class="btn-finance" href="https://pod.raven-sharp.com/login" target="_blank" rel="noopener">Open RavenSharp</a>
   </div>`;
 }
 
