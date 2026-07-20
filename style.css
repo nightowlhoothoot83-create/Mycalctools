@@ -438,6 +438,7 @@ p { color: var(--muted); }
 }
 .tool-card::before { content: '?'; position: absolute; top: 14px; right: 16px; font-size: 0.8rem; opacity: 0; transition: opacity 0.2s; }
 .tool-card:hover::before { opacity: 1; }
+.tool-card:hover { border-color: rgba(124,92,191,0.4); box-shadow: 0 14px 34px rgba(124,92,191,0.18); transform: translateY(-3px); }
 .tool-card.health { border-top: 2px solid var(--health); }
 .tool-card.finance { border-top: 2px solid var(--finance); }
 .tool-card.kitchen { border-top: 2px solid var(--kitchen); }
