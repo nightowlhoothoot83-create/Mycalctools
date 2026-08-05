@@ -99,7 +99,7 @@ function renderNav() {
       <a href="/index.html#business">📊 Business</a>
       <a href="/index.html#eco">🌱 Eco</a>
       <a href="/converters/">🔄 Converters</a>
-      <a href="/about.html">About</a>
+      <a href="/about">About</a>
       <a href="https://www.mycalendartools.net" target="_blank" rel="noopener">📅 MyCalendarTools</a>
     </div>`;
   initSearch('navSearch', 'navDropdown');
@@ -154,10 +154,10 @@ function renderFooter() {
             <h4>Info</h4>
             <ul>
               <li><a href="/converters/">🔄 Converters</a>
-      <a href="/about.html">About</a></li>
-              <li><a href="/contact.html">Contact</a></li>
-              <li><a href="/privacy.html">Privacy Policy</a></li>
-              <li><a href="/terms.html">Terms of Use</a></li>\n              <li><a href="/cookies">Cookie Policy</a></li>\n              <li><button type="button" onclick="window.reopenCookiePreferences && window.reopenCookiePreferences()" style="background:none;border:0;padding:0;color:inherit;font:inherit;cursor:pointer;text-decoration:underline">Cookie Settings</button></li>
+      <a href="/about">About</a></li>
+              <li><a href="/contact">Contact</a></li>
+              <li><a href="/privacy">Privacy Policy</a></li>
+              <li><a href="/terms">Terms of Use</a></li>\n              <li><a href="/cookies">Cookie Policy</a></li>\n              <li><button type="button" onclick="window.reopenCookiePreferences && window.reopenCookiePreferences()" style="background:none;border:0;padding:0;color:inherit;font:inherit;cursor:pointer;text-decoration:underline">Cookie Settings</button></li>
               <li><a href="/sitemap.html">Sitemap</a></li>
               <li><a href="https://www.mycalendartools.net" target="_blank" rel="noopener">📅 MyCalendarTools</a></li>
             </ul>
