@@ -17,9 +17,9 @@ http://mycalctools.pages.dev/* https://mycalctools.net/:splat 301!
 /terms/ /terms.html 301
 /terms-of-use /terms.html 301
 /terms-of-use/ /terms.html 301
-/cookies /cookies.html 301
-/cookies/ /cookies.html 301
-/cookie-policy /cookies.html 301
-/cookie-policy/ /cookies.html 301
+/cookies.html /cookies 301
+/cookies/ /cookies 301
+/cookie-policy /cookies 301
+/cookie-policy/ /cookies 301
 /sitemap /sitemap.html 301
 /sitemap/ /sitemap.html 301
