@@ -43,7 +43,7 @@
     msg.style.cssText = 'margin:0;flex:1;min-width:200px;line-height:1.5';
     msg.innerHTML = 'We use cookies and local storage to remember your preferences and serve ads. ' +
       '<a href="/cookies" style="color:#a78bfa;text-decoration:underline">Cookie Policy</a> · ' +
-      '<a href="/privacy.html" style="color:#a78bfa;text-decoration:underline">Privacy Policy</a>';
+      '<a href="/privacy" style="color:#a78bfa;text-decoration:underline">Privacy Policy</a>';
 
     var btns = document.createElement('div');
     btns.style.cssText = 'display:flex;gap:10px;flex-shrink:0';
