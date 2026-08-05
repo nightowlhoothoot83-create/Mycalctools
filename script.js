@@ -157,7 +157,7 @@ function renderFooter() {
       <a href="/about.html">About</a></li>
               <li><a href="/contact.html">Contact</a></li>
               <li><a href="/privacy.html">Privacy Policy</a></li>
-              <li><a href="/terms.html">Terms of Use</a></li>
+              <li><a href="/terms.html">Terms of Use</a></li>\n              <li><a href="/cookies.html">Cookie Policy</a></li>\n              <li><button type="button" onclick="window.reopenCookiePreferences && window.reopenCookiePreferences()" style="background:none;border:0;padding:0;color:inherit;font:inherit;cursor:pointer;text-decoration:underline">Cookie Settings</button></li>
               <li><a href="/sitemap.html">Sitemap</a></li>
               <li><a href="https://www.mycalendartools.net" target="_blank" rel="noopener">📅 MyCalendarTools</a></li>
             </ul>
