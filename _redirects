@@ -5,17 +5,7 @@ https://mycalctools.pages.dev/* https://mycalctools.net/:splat 301!
 http://mycalctools.pages.dev/* https://mycalctools.net/:splat 301!
 
 /index.html / 301
-/about /about.html 301
-/about/ /about.html 301
-/contact /contact.html 301
-/contact/ /contact.html 301
-/privacy /privacy.html 301
-/privacy/ /privacy.html 301
-/privacy-policy /privacy.html 301
-/privacy-policy/ /privacy.html 301
-/terms /terms.html 301
-/terms/ /terms.html 301
-/terms-of-use /terms.html 301
-/terms-of-use/ /terms.html 301
-/sitemap /sitemap.html 301
-/sitemap/ /sitemap.html 301
+/privacy-policy /privacy 301
+/privacy-policy/ /privacy 301
+/terms-of-use /terms 301
+/terms-of-use/ /terms 301
