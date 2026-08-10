@@ -25,6 +25,8 @@ function infoSection(html,path){
  </section>`;
 }
 function rewrite(html,url){
+ // Remove the old generated SEO filler. The tool-specific section above remains.
+ html=html.replace(/<section\b[^>]*\bdata-static-seo=["']true["'][^>]*>[\s\S]*?<\/section>/gi,"");
  html=html.replace(/\bhref=(["'])([^"']+)\1/gi,(m,q,h)=>`href=${q}${cleanHref(h)}${q}`);
  const can=`<link rel="canonical" href="${url}">`,a=/<link\b[^>]*rel=["']canonical["'][^>]*>/i,b=/<link\b[^>]*href=["'][^"']+["'][^>]*rel=["']canonical["'][^>]*>/i;
  if(a.test(html))html=html.replace(a,can);else if(b.test(html))html=html.replace(b,can);else html=html.replace(/<\/head>/i,can+"</head>");
@@ -45,13 +47,13 @@ export default{async fetch(request,env){
  if(aliases[u.pathname]){const t=new URL(u.href);t.pathname=aliases[u.pathname];return Response.redirect(t.href,301)}
  const p=cleanPath(u.pathname);if(p!==u.pathname){const t=new URL(u.href);t.pathname=p;return Response.redirect(t.href,301)}
  const r=await getAsset(request,env,p),ct=r.headers.get("content-type")||"";
- if(r.ok&&p==="/script.js"&&/javascript|ecmascript/i.test(ct)){
+ if(r.ok&&p==="/script.js"){
    let js=await r.text();
-   js=js.replace(/\/index\.html/g,"/").replace(/\.html(?=[\"'])/g,"");
-   const h=new Headers(r.headers);h.delete("content-length");h.set("Content-Type","application/javascript; charset=utf-8");h.set("X-ADG-URL-Hygiene","clean-js-v1");
+   js=js.replace(/\/index\.html/g,"/").replace(/\.html(?=[\"'?#])/g,"");
+   const h=new Headers(r.headers);h.delete("content-length");h.set("Content-Type","application/javascript; charset=utf-8");h.set("X-ADG-URL-Hygiene","clean-js-v2");
    return new Response(js,{status:r.status,statusText:r.statusText,headers:h});
  }
  if(!r.ok||!ct.includes("text/html"))return r;
- const body=rewrite(await r.text(),ORIGIN+p),h=new Headers(r.headers);h.delete("content-length");h.set("Content-Type","text/html; charset=utf-8");h.set("X-ADG-URL-Hygiene","clean-v2");h.set("X-ADG-Unique-Content",INFO[key(p)]?"tool-specific-v1":"not-applicable");
+ const body=rewrite(await r.text(),ORIGIN+p),h=new Headers(r.headers);h.delete("content-length");h.set("Content-Type","text/html; charset=utf-8");h.set("X-ADG-URL-Hygiene","clean-v3");h.set("X-ADG-Unique-Content",INFO[key(p)]?"tool-specific-v1":"not-applicable");
  return new Response(body,{status:r.status,statusText:r.statusText,headers:h});
 }};
