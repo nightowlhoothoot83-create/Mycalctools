@@ -1,52 +1,52 @@
 /* script.js — MyCalcTools.net shared components */
 
 const ALL_TOOLS = [
-  { name: 'BMI Calculator', file: 'bmi-calculator.html', cat: 'Health', emoji: '⚖️' },
-  { name: 'Calorie Calculator', file: 'calorie-calculator.html', cat: 'Health', emoji: '🔥' },
-  { name: 'Pregnancy Calculator', file: 'pregnancy-calculator.html', cat: 'Health', emoji: '🤱' },
-  { name: 'Ovulation Calculator', file: 'ovulation-calculator.html', cat: 'Health', emoji: '🌸' },
-  { name: 'Due Date Calculator', file: 'due-date-calculator.html', cat: 'Health', emoji: '👶' },
-  { name: 'Sleep Cycle Calculator', file: 'sleep-cycle-calculator.html', cat: 'Health', emoji: '😴' },
-  { name: 'Water Intake Calculator', file: 'water-intake-calculator.html', cat: 'Health', emoji: '💧' },
-  { name: 'Period Calculator', file: 'period-calculator.html', cat: 'Health', emoji: '📅' },
-  { name: 'Kids Growth Calculator', file: 'kids-growth-calculator.html', cat: 'Health', emoji: '📏' },
-  { name: 'Loan Calculator', file: 'loan-calculator.html', cat: 'Finance', emoji: '💰' },
-  { name: 'Mortgage Calculator', file: 'mortgage-calculator.html', cat: 'Finance', emoji: '🏠' },
-  { name: 'Tax Calculator', file: 'tax-calculator.html', cat: 'Finance', emoji: '🧾' },
-  { name: 'Pay Calculator', file: 'pay-calculator.html', cat: 'Finance', emoji: '💵' },
-  { name: 'Insurance Calculator', file: 'insurance-calculator.html', cat: 'Finance', emoji: '🛡️' },
-  { name: 'Rent Affordability Calculator', file: 'rent-calculator.html', cat: 'Finance', emoji: '🏘️' },
-  { name: 'Electricity Cost Calculator', file: 'electricity-calculator.html', cat: 'Finance', emoji: '⚡' },
-  { name: 'Australian Tax Calculator', file: 'australian-tax-calculator.html', cat: 'Finance', emoji: '🦘' },
-  { name: 'BAS & GST Calculator', file: 'bas-gst-calculator.html', cat: 'Finance', emoji: '📋' },
-  { name: 'HECS-HELP Calculator', file: 'hecs-help-calculator.html', cat: 'Finance', emoji: '🎓' },
-  { name: 'Superannuation Calculator', file: 'superannuation-calculator.html', cat: 'Finance', emoji: '🏦' },
-  { name: 'Cost of Living Calculator', file: 'cost-of-living-calculator.html', cat: 'Finance', emoji: '🛒' },
-  { name: 'Air Fryer Calculator', file: 'airfryer-calculator.html', cat: 'Kitchen', emoji: '🍳' },
-  { name: 'Boiled Egg Calculator', file: 'boiled-egg-calculator.html', cat: 'Kitchen', emoji: '🥚' },
-  { name: 'Recipe Scaling Calculator', file: 'recipe-scaling-calculator.html', cat: 'Kitchen', emoji: 'x' },
-  { name: 'Cups to Grams Converter', file: 'cups-grams-calculator.html', cat: 'Kitchen', emoji: 'g' },
-  { name: 'Pan Size Converter', file: 'pan-size-converter.html', cat: 'Kitchen', emoji: 'pan' },
-  { name: 'Age Calculator', file: 'age-calculator.html', cat: 'Lifestyle', emoji: '🎂' },
-  { name: 'Date Calculator', file: 'date-calculator.html', cat: 'Lifestyle', emoji: '🗓️' },
-  { name: 'Fuel Cost Calculator', file: 'fuel-cost-calculator.html', cat: 'Lifestyle', emoji: '⛽' },
-  { name: 'Tip Calculator', file: 'tip-calculator.html', cat: 'Lifestyle', emoji: '🧾' },
-  { name: 'Screen Time Calculator', file: 'screen-time-calculator.html', cat: 'Lifestyle', emoji: '📱' },
-  { name: 'Concrete Calculator', file: 'concrete-calculator.html', cat: 'Lifestyle', emoji: '🏗️' },
-  { name: 'Percentage Calculator', file: 'percentage-calculator.html', cat: 'Business', emoji: '📊' },
-  { name: 'Scientific Calculator', file: 'scientific-calculator.html', cat: 'Business', emoji: '🔬' },
-  { name: 'Etsy Fee Calculator', file: 'etsy-calculator.html', cat: 'Business', emoji: '🛍️' },
-  { name: 'Freelancer Calculator', file: 'freelancer-calculator.html', cat: 'Business', emoji: '💼' },
-  { name: 'Freelancer Rate Calculator', file: 'freelancer-rate-calculator.html', cat: 'Business', emoji: '💹' },
-  { name: 'Digital Product Calculator', file: 'digital-product-calculator.html', cat: 'Business', emoji: '📦' },
-  { name: 'Rainwater Harvesting Calculator', file: 'rainwater-calculator.html', cat: 'Eco', emoji: '🌧️' },
-  { name: 'Solar & Battery Calculator', file: 'solar-calculator.html', cat: 'Eco', emoji: '☀️' },
-  { name: 'Food Forest Calculator', file: 'food-forest-calculator.html', cat: 'Eco', emoji: '🌳' },
-  { name: 'Length & Distance Converter', file: 'converters/length-converter.html', cat: 'Converters', emoji: '📏' },
-  { name: 'Weight Converter', file: 'converters/weight-converter.html', cat: 'Converters', emoji: '⚖️' },
-  { name: 'Volume Converter', file: 'converters/volume-converter.html', cat: 'Converters', emoji: '🧪' },
-  { name: 'Temperature Converter', file: 'converters/temperature-converter.html', cat: 'Converters', emoji: '🌡️' },
-  { name: 'Speed Converter', file: 'converters/speed-converter.html', cat: 'Converters', emoji: '🚀' },
+  { name: 'BMI Calculator', file: 'bmi-calculator', cat: 'Health', emoji: '⚖️' },
+  { name: 'Calorie Calculator', file: 'calorie-calculator', cat: 'Health', emoji: '🔥' },
+  { name: 'Pregnancy Calculator', file: 'pregnancy-calculator', cat: 'Health', emoji: '🤱' },
+  { name: 'Ovulation Calculator', file: 'ovulation-calculator', cat: 'Health', emoji: '🌸' },
+  { name: 'Due Date Calculator', file: 'due-date-calculator', cat: 'Health', emoji: '👶' },
+  { name: 'Sleep Cycle Calculator', file: 'sleep-cycle-calculator', cat: 'Health', emoji: '😴' },
+  { name: 'Water Intake Calculator', file: 'water-intake-calculator', cat: 'Health', emoji: '💧' },
+  { name: 'Period Calculator', file: 'period-calculator', cat: 'Health', emoji: '📅' },
+  { name: 'Kids Growth Calculator', file: 'kids-growth-calculator', cat: 'Health', emoji: '📏' },
+  { name: 'Loan Calculator', file: 'loan-calculator', cat: 'Finance', emoji: '💰' },
+  { name: 'Mortgage Calculator', file: 'mortgage-calculator', cat: 'Finance', emoji: '🏠' },
+  { name: 'Tax Calculator', file: 'tax-calculator', cat: 'Finance', emoji: '🧾' },
+  { name: 'Pay Calculator', file: 'pay-calculator', cat: 'Finance', emoji: '💵' },
+  { name: 'Insurance Calculator', file: 'insurance-calculator', cat: 'Finance', emoji: '🛡️' },
+  { name: 'Rent Affordability Calculator', file: 'rent-calculator', cat: 'Finance', emoji: '🏘️' },
+  { name: 'Electricity Cost Calculator', file: 'electricity-calculator', cat: 'Finance', emoji: '⚡' },
+  { name: 'Australian Tax Calculator', file: 'australian-tax-calculator', cat: 'Finance', emoji: '🦘' },
+  { name: 'BAS & GST Calculator', file: 'bas-gst-calculator', cat: 'Finance', emoji: '📋' },
+  { name: 'HECS-HELP Calculator', file: 'hecs-help-calculator', cat: 'Finance', emoji: '🎓' },
+  { name: 'Superannuation Calculator', file: 'superannuation-calculator', cat: 'Finance', emoji: '🏦' },
+  { name: 'Cost of Living Calculator', file: 'cost-of-living-calculator', cat: 'Finance', emoji: '🛒' },
+  { name: 'Air Fryer Calculator', file: 'airfryer-calculator', cat: 'Kitchen', emoji: '🍳' },
+  { name: 'Boiled Egg Calculator', file: 'boiled-egg-calculator', cat: 'Kitchen', emoji: '🥚' },
+  { name: 'Recipe Scaling Calculator', file: 'recipe-scaling-calculator', cat: 'Kitchen', emoji: 'x' },
+  { name: 'Cups to Grams Converter', file: 'cups-grams-calculator', cat: 'Kitchen', emoji: 'g' },
+  { name: 'Pan Size Converter', file: 'pan-size-converter', cat: 'Kitchen', emoji: 'pan' },
+  { name: 'Age Calculator', file: 'age-calculator', cat: 'Lifestyle', emoji: '🎂' },
+  { name: 'Date Calculator', file: 'date-calculator', cat: 'Lifestyle', emoji: '🗓️' },
+  { name: 'Fuel Cost Calculator', file: 'fuel-cost-calculator', cat: 'Lifestyle', emoji: '⛽' },
+  { name: 'Tip Calculator', file: 'tip-calculator', cat: 'Lifestyle', emoji: '🧾' },
+  { name: 'Screen Time Calculator', file: 'screen-time-calculator', cat: 'Lifestyle', emoji: '📱' },
+  { name: 'Concrete Calculator', file: 'concrete-calculator', cat: 'Lifestyle', emoji: '🏗️' },
+  { name: 'Percentage Calculator', file: 'percentage-calculator', cat: 'Business', emoji: '📊' },
+  { name: 'Scientific Calculator', file: 'scientific-calculator', cat: 'Business', emoji: '🔬' },
+  { name: 'Etsy Fee Calculator', file: 'etsy-calculator', cat: 'Business', emoji: '🛍️' },
+  { name: 'Freelancer Calculator', file: 'freelancer-calculator', cat: 'Business', emoji: '💼' },
+  { name: 'Freelancer Rate Calculator', file: 'freelancer-rate-calculator', cat: 'Business', emoji: '💹' },
+  { name: 'Digital Product Calculator', file: 'digital-product-calculator', cat: 'Business', emoji: '📦' },
+  { name: 'Rainwater Harvesting Calculator', file: 'rainwater-calculator', cat: 'Eco', emoji: '🌧️' },
+  { name: 'Solar & Battery Calculator', file: 'solar-calculator', cat: 'Eco', emoji: '☀️' },
+  { name: 'Food Forest Calculator', file: 'food-forest-calculator', cat: 'Eco', emoji: '🌳' },
+  { name: 'Length & Distance Converter', file: 'converters/length-converter', cat: 'Converters', emoji: '📏' },
+  { name: 'Weight Converter', file: 'converters/weight-converter', cat: 'Converters', emoji: '⚖️' },
+  { name: 'Volume Converter', file: 'converters/volume-converter', cat: 'Converters', emoji: '🧪' },
+  { name: 'Temperature Converter', file: 'converters/temperature-converter', cat: 'Converters', emoji: '🌡️' },
+  { name: 'Speed Converter', file: 'converters/speed-converter', cat: 'Converters', emoji: '🚀' },
 ];
 
 function renderBrandStrip() {
@@ -58,7 +58,7 @@ function renderBrandStrip() {
           <span style="font-weight:700;font-size:0.9rem;color:var(--text,#e8eaf6);letter-spacing:0.02em">Raven Sharp <span style="color:var(--muted,#94a3b8);font-weight:400">Tools</span></span>
         </a>
       </div>
-      <a href="/about.html#support" class="rs-support-pill">Support Us</a>
+      <a href="/about#support" class="rs-support-pill">Support Us</a>
     </div>`;
 }
 
@@ -66,7 +66,7 @@ function renderNav() {
   document.getElementById('nav').innerHTML = `
     <nav class="site-nav">
       <div class="nav-inner">
-        <a href="/index.html" class="nav-logo">
+        <a href="/" class="nav-logo">
           <img src="/mycalctools-logo.png" alt="MyCalcTools logo" class="nav-logo-icon">
           <span class="nav-logo-text">MyCalcTools</span>
         </a>
@@ -76,12 +76,12 @@ function renderNav() {
           <div class="search-dropdown" id="navDropdown"></div>
         </div>
         <ul class="nav-links">
-          <li><a href="/index.html#health">Health</a></li>
-          <li><a href="/index.html#finance">Finance</a></li>
-          <li><a href="/index.html#kitchen">Kitchen</a></li>
-          <li><a href="/index.html#lifestyle">Lifestyle</a></li>
-          <li><a href="/index.html#business">Business</a></li>
-          <li><a href="/index.html#eco">Eco</a></li>
+          <li><a href="/#health">Health</a></li>
+          <li><a href="/#finance">Finance</a></li>
+          <li><a href="/#kitchen">Kitchen</a></li>
+          <li><a href="/#lifestyle">Lifestyle</a></li>
+          <li><a href="/#business">Business</a></li>
+          <li><a href="/#eco">Eco</a></li>
           <li><a href="/converters/">Converters</a></li>
         </ul>
         <a href="https://www.mycalendartools.net" class="nav-sister-pill" target="_blank" rel="noopener">📅 MyCalendarTools</a>
@@ -92,12 +92,12 @@ function renderNav() {
       </div>
     </nav>
     <div class="nav-mobile-menu" id="mobileMenu">
-      <a href="/index.html#health">🏃 Health</a>
-      <a href="/index.html#finance">💰 Finance</a>
-      <a href="/index.html#kitchen">🍳 Kitchen</a>
-      <a href="/index.html#lifestyle">🎯 Lifestyle</a>
-      <a href="/index.html#business">📊 Business</a>
-      <a href="/index.html#eco">🌱 Eco</a>
+      <a href="/#health">🏃 Health</a>
+      <a href="/#finance">💰 Finance</a>
+      <a href="/#kitchen">🍳 Kitchen</a>
+      <a href="/#lifestyle">🎯 Lifestyle</a>
+      <a href="/#business">📊 Business</a>
+      <a href="/#eco">🌱 Eco</a>
       <a href="/converters/">🔄 Converters</a>
       <a href="/about">About</a>
       <a href="https://www.mycalendartools.net" target="_blank" rel="noopener">📅 MyCalendarTools</a>
@@ -112,7 +112,7 @@ function renderFooter() {
       <div class="container">
         <div class="footer-grid">
           <div class="footer-brand">
-            <a href="/index.html" class="nav-logo">
+            <a href="/" class="nav-logo">
               <img src="/mycalctools-logo.png" alt="MyCalcTools logo" class="nav-logo-icon">
           <span class="nav-logo-text">MyCalcTools</span>
             </a>
@@ -131,23 +131,23 @@ function renderFooter() {
           <div class="footer-col">
             <h4>Health & Body</h4>
             <ul>
-              <li><a href="/bmi-calculator.html">BMI Calculator</a></li>
-              <li><a href="/calorie-calculator.html">Calorie Calculator</a></li>
-              <li><a href="/pregnancy-calculator.html">Pregnancy Calculator</a></li>
-              <li><a href="/sleep-cycle-calculator.html">Sleep Cycle</a></li>
-              <li><a href="/water-intake-calculator.html">Water Intake</a></li>
-              <li><a href="/kids-growth-calculator.html">Kids Growth</a></li>
+              <li><a href="/bmi-calculator">BMI Calculator</a></li>
+              <li><a href="/calorie-calculator">Calorie Calculator</a></li>
+              <li><a href="/pregnancy-calculator">Pregnancy Calculator</a></li>
+              <li><a href="/sleep-cycle-calculator">Sleep Cycle</a></li>
+              <li><a href="/water-intake-calculator">Water Intake</a></li>
+              <li><a href="/kids-growth-calculator">Kids Growth</a></li>
             </ul>
           </div>
           <div class="footer-col">
             <h4>Finance</h4>
             <ul>
-              <li><a href="/loan-calculator.html">Loan Calculator</a></li>
-              <li><a href="/mortgage-calculator.html">Mortgage</a></li>
-              <li><a href="/australian-tax-calculator.html">AU Tax</a></li>
-              <li><a href="/superannuation-calculator.html">Superannuation</a></li>
-              <li><a href="/hecs-help-calculator.html">HECS-HELP</a></li>
-              <li><a href="/cost-of-living-calculator.html">Cost of Living</a></li>
+              <li><a href="/loan-calculator">Loan Calculator</a></li>
+              <li><a href="/mortgage-calculator">Mortgage</a></li>
+              <li><a href="/australian-tax-calculator">AU Tax</a></li>
+              <li><a href="/superannuation-calculator">Superannuation</a></li>
+              <li><a href="/hecs-help-calculator">HECS-HELP</a></li>
+              <li><a href="/cost-of-living-calculator">Cost of Living</a></li>
             </ul>
           </div>
           <div class="footer-col">
@@ -157,8 +157,10 @@ function renderFooter() {
       <a href="/about">About</a></li>
               <li><a href="/contact">Contact</a></li>
               <li><a href="/privacy">Privacy Policy</a></li>
-              <li><a href="/terms">Terms of Use</a></li>\n              <li><a href="/cookies">Cookie Policy</a></li>\n              <li><button type="button" onclick="window.reopenCookiePreferences && window.reopenCookiePreferences()" style="background:none;border:0;padding:0;color:inherit;font:inherit;cursor:pointer;text-decoration:underline">Cookie Settings</button></li>
-              <li><a href="/sitemap.html">Sitemap</a></li>
+              <li><a href="/terms">Terms of Use</a></li>
+              <li><a href="/cookies">Cookie Policy</a></li>
+              <li><button type="button" onclick="window.reopenCookiePreferences && window.reopenCookiePreferences()" style="background:none;border:0;padding:0;color:inherit;font:inherit;cursor:pointer;text-decoration:underline">Cookie Settings</button></li>
+              <li><a href="/sitemap">Sitemap</a></li>
               <li><a href="https://www.mycalendartools.net" target="_blank" rel="noopener">📅 MyCalendarTools</a></li>
             </ul>
           </div>
@@ -184,7 +186,7 @@ function renderGroupFooter() {
       <h3>Part of the Ascension Digital Group</h3>
       <p class="rs-footer-tagline">Elevating Your Digital Future</p>
       <div class="rs-footer-links">
-        <a href="/index.html" title="MyCalcTools"><img src="/mycalctools-logo.png" alt="MyCalcTools" class="rs-footer-brand-icon"></a>
+        <a href="/" title="MyCalcTools"><img src="/mycalctools-logo.png" alt="MyCalcTools" class="rs-footer-brand-icon"></a>
         <a href="https://www.mycalendartools.net" target="_blank" rel="noopener" title="MyCalendarTools"><img src="/mycalendartools-logo.png" alt="MyCalendarTools" class="rs-footer-brand-icon"></a>
         <a href="https://www.wheelnamepicker.com.au" target="_blank" rel="noopener" title="WheelNamePicker"><img src="/wheelnamepicker-logo.png" alt="WheelNamePicker" class="rs-footer-brand-icon"></a>
         <a href="https://zyia-creations.printify.me/" target="_blank" rel="noopener" title="Zyia Creations"><img src="/zyia-creations.png" alt="Zyia Creations" class="rs-footer-brand-icon"></a>
@@ -195,7 +197,7 @@ function renderGroupFooter() {
         <a href="https://pod.raven-sharp.com/login" target="_blank" rel="noopener" title="RavenSharp"><img src="/ravensharp-logo.jpg" alt="RavenSharp" class="rs-footer-brand-icon"></a>
 
       </div>
-      <a href="/about.html#support" class="btn-finance" style="margin-top:8px">Support Us</a>
+      <a href="/about#support" class="btn-finance" style="margin-top:8px">Support Us</a>
     </div>`;
 }
 
@@ -267,7 +269,6 @@ function initPage() {
 }
 
 document.addEventListener('DOMContentLoaded', initPage);
-
 
 function renderRavenSharpPromo() {
   return `<div class="soft-promo-card card container">
