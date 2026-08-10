@@ -44,7 +44,14 @@ export default{async fetch(request,env){
  const aliases={"/privacy-policy":"/privacy","/privacy-policy/":"/privacy","/terms-of-use":"/terms","/terms-of-use/":"/terms"};
  if(aliases[u.pathname]){const t=new URL(u.href);t.pathname=aliases[u.pathname];return Response.redirect(t.href,301)}
  const p=cleanPath(u.pathname);if(p!==u.pathname){const t=new URL(u.href);t.pathname=p;return Response.redirect(t.href,301)}
- const r=await getAsset(request,env,p),ct=r.headers.get("content-type")||"";if(!r.ok||!ct.includes("text/html"))return r;
+ const r=await getAsset(request,env,p),ct=r.headers.get("content-type")||"";
+ if(r.ok&&p==="/script.js"&&/javascript|ecmascript/i.test(ct)){
+   let js=await r.text();
+   js=js.replace(/\/index\.html/g,"/").replace(/\.html(?=[\"'])/g,"");
+   const h=new Headers(r.headers);h.delete("content-length");h.set("Content-Type","application/javascript; charset=utf-8");h.set("X-ADG-URL-Hygiene","clean-js-v1");
+   return new Response(js,{status:r.status,statusText:r.statusText,headers:h});
+ }
+ if(!r.ok||!ct.includes("text/html"))return r;
  const body=rewrite(await r.text(),ORIGIN+p),h=new Headers(r.headers);h.delete("content-length");h.set("Content-Type","text/html; charset=utf-8");h.set("X-ADG-URL-Hygiene","clean-v1");h.set("X-ADG-Unique-Content",INFO[key(p)]?"tool-specific-v1":"not-applicable");
  return new Response(body,{status:r.status,statusText:r.statusText,headers:h});
 }};
