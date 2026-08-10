@@ -34,9 +34,9 @@ function rewrite(html,url){
  return html;
 }
 async function getAsset(request,env,p){
- const base=new URL(request.url),paths=[];
- if(p==="/")paths.push("/index.html");else if(p.endsWith("/"))paths.push(p+"index.html");else if(/\.[a-z0-9]+$/i.test(p))paths.push(p);else paths.push(p+".html",p+"/index.html");
- let last;for(const x of paths){const u=new URL(base.href);u.protocol="https:";u.hostname="mycalctools.net";u.port="";u.pathname=x;last=await env.ASSETS.fetch(new Request(u.href,request));if(last.status!==404)return last}return last||env.ASSETS.fetch(request);
+ const u=new URL(request.url);
+ u.protocol="https:";u.hostname="mycalctools.net";u.port="";u.pathname=p;
+ return env.ASSETS.fetch(new Request(u.href,request));
 }
 export default{async fetch(request,env){
  const u=new URL(request.url);
@@ -52,6 +52,6 @@ export default{async fetch(request,env){
    return new Response(js,{status:r.status,statusText:r.statusText,headers:h});
  }
  if(!r.ok||!ct.includes("text/html"))return r;
- const body=rewrite(await r.text(),ORIGIN+p),h=new Headers(r.headers);h.delete("content-length");h.set("Content-Type","text/html; charset=utf-8");h.set("X-ADG-URL-Hygiene","clean-v1");h.set("X-ADG-Unique-Content",INFO[key(p)]?"tool-specific-v1":"not-applicable");
+ const body=rewrite(await r.text(),ORIGIN+p),h=new Headers(r.headers);h.delete("content-length");h.set("Content-Type","text/html; charset=utf-8");h.set("X-ADG-URL-Hygiene","clean-v2");h.set("X-ADG-Unique-Content",INFO[key(p)]?"tool-specific-v1":"not-applicable");
  return new Response(body,{status:r.status,statusText:r.statusText,headers:h});
 }};
