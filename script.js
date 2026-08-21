@@ -39,9 +39,18 @@ const ALL_TOOLS = [
   { name: 'Freelancer Calculator', file: 'freelancer-calculator', cat: 'Business', emoji: '💼' },
   { name: 'Freelancer Rate Calculator', file: 'freelancer-rate-calculator', cat: 'Business', emoji: '💹' },
   { name: 'Digital Product Calculator', file: 'digital-product-calculator', cat: 'Business', emoji: '📦' },
+  { name: 'Subscription Cancellation Savings', file: 'subscription-cancellation-savings-calculator', cat: 'Business', emoji: '✂️' },
+  { name: 'Online Business Running Cost', file: 'online-business-running-cost-calculator', cat: 'Business', emoji: '🧾' },
+  { name: 'Advertising Budget & Break-Even', file: 'advertising-budget-break-even-calculator', cat: 'Business', emoji: '📣' },
   { name: 'Rainwater Harvesting Calculator', file: 'rainwater-calculator', cat: 'Eco', emoji: '🌧️' },
   { name: 'Solar & Battery Calculator', file: 'solar-calculator', cat: 'Eco', emoji: '☀️' },
   { name: 'Food Forest Calculator', file: 'food-forest-calculator', cat: 'Eco', emoji: '🌳' },
+  { name: 'Rainwater Days Remaining', file: 'rainwater-days-remaining-calculator', cat: 'Eco', emoji: '💧' },
+  { name: 'Generator vs Solar Cost', file: 'generator-vs-solar-cost-calculator', cat: 'Eco', emoji: '☀️' },
+  { name: 'Grow-Your-Own Savings', file: 'grow-your-own-savings-calculator', cat: 'Eco', emoji: '🥬' },
+  { name: 'Mulch Coverage & Cost', file: 'mulch-coverage-cost-calculator', cat: 'Eco', emoji: '🍂' },
+  { name: 'Trees per Acre/Hectare', file: 'trees-per-acre-hectare-calculator', cat: 'Eco', emoji: '🌳' },
+  { name: 'Off-Grid Battery Runtime', file: 'off-grid-battery-runtime-calculator', cat: 'Eco', emoji: '🔋' },
   { name: 'Length & Distance Converter', file: 'converters/length-converter', cat: 'Converters', emoji: '📏' },
   { name: 'Weight Converter', file: 'converters/weight-converter', cat: 'Converters', emoji: '⚖️' },
   { name: 'Volume Converter', file: 'converters/volume-converter', cat: 'Converters', emoji: '🧪' },
@@ -72,7 +81,7 @@ function renderNav() {
         </a>
         <div class="nav-search">
           <span class="nav-search-icon">🔍</span>
-          <input type="text" class="nav-search-input" id="navSearch" placeholder="Search 46 tools..." autocomplete="off">
+          <input type="text" class="nav-search-input" id="navSearch" placeholder="Search 55 tools..." autocomplete="off">
           <div class="search-dropdown" id="navDropdown"></div>
         </div>
         <ul class="nav-links">
