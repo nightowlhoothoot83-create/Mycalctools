@@ -8,6 +8,12 @@ for(const file of files){const s=fs.readFileSync(file,'utf8');if(/href=["'][^"']
 if(fs.readFileSync('ads.txt','utf8').trim()!==expected)fail.push('ads.txt: publisher line mismatch');
 if(/<loc>[^<]*\.html/i.test(fs.readFileSync('sitemap.xml','utf8')))fail.push('sitemap.xml: redirected .html URL');
 const consent=fs.readFileSync('cookie-consent.js','utf8');if(!/data-consent-adsense/.test(consent)||!/reopenCookiePreferences/.test(consent))fail.push('cookie-consent.js: consent gate missing');
+const shared=fs.readFileSync('script.js','utf8');
+const toolEntries=(shared.match(/\{ name:/g)||[]).length;
+if(toolEntries!==55)fail.push(`script.js: expected 55 searchable tools, found ${toolEntries}`);
+const requiredNew=['subscription-cancellation-savings-calculator','online-business-running-cost-calculator','advertising-budget-break-even-calculator','rainwater-days-remaining-calculator','generator-vs-solar-cost-calculator','grow-your-own-savings-calculator','mulch-coverage-cost-calculator','trees-per-acre-hectare-calculator','off-grid-battery-runtime-calculator'];
+for(const slug of requiredNew){if(!fs.existsSync(`${slug}.html`))fail.push(`${slug}: page missing`);if(!shared.includes(`file: '${slug}'`))fail.push(`${slug}: missing from search list`);if(!fs.readFileSync('sitemap.xml','utf8').includes(`/${slug}</loc>`))fail.push(`${slug}: missing from XML sitemap`)}
+for(const file of ['index.html','about.html','sitemap.html','script.js']){const s=fs.readFileSync(file,'utf8');if(/(?:46 free|46 tools|Search 46|includes 46)/i.test(s))fail.push(`${file}: stale 46-tool reference`)}
 const worker=fs.readFileSync('_worker.js','utf8');
 const objectLiteral=name=>{const start=worker.indexOf(`const ${name}={`);if(start<0)return null;const open=worker.indexOf('{',start);let depth=0,quote=null,escaped=false;for(let i=open;i<worker.length;i++){const c=worker[i];if(quote){if(escaped)escaped=false;else if(c==='\\')escaped=true;else if(c===quote)quote=null;continue}if(c==='"'||c==="'"){quote=c;continue}if(c==='{')depth++;if(c==='}'&&--depth===0)return worker.slice(open,i+1)}return null};
 const infoLiteral=objectLiteral('INFO'),howLiteral=objectLiteral('HOW');
