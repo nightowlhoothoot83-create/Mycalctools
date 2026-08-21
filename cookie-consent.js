@@ -12,9 +12,12 @@
     try { localStorage.setItem(CONSENT_KEY, value); } catch (e) {}
   }
 
-  /* Gate ads — only push if consent is granted */
+  var ADSENSE_CLIENT = 'ca-pub-1904958390525375';
+
+  /* Load AdSense only after consent. Merely delaying the ad-slot push is not
+     enough: a static adsbygoogle.js tag has already contacted Google. */
   function activateAds() {
-    if (typeof window.adsbygoogle !== 'undefined' || document.querySelector('script[src*="adsbygoogle"]')) {
+    function fillSlots() {
       var ads = document.querySelectorAll('ins.adsbygoogle');
       ads.forEach(function (ins) {
         if (!ins.dataset.adsbygoogleStatus) {
@@ -22,6 +25,23 @@
         }
       });
     }
+
+    var existing = document.querySelector('script[data-consent-adsense]');
+    if (existing) {
+      if (existing.dataset.loaded === 'true') fillSlots();
+      return;
+    }
+
+    var script = document.createElement('script');
+    script.async = true;
+    script.crossOrigin = 'anonymous';
+    script.dataset.consentAdsense = 'true';
+    script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=' + ADSENSE_CLIENT;
+    script.addEventListener('load', function () {
+      script.dataset.loaded = 'true';
+      fillSlots();
+    });
+    document.head.appendChild(script);
   }
 
   function buildBanner() {
