@@ -8,4 +8,9 @@ for(const file of files){const s=fs.readFileSync(file,'utf8');if(/href=["'][^"']
 if(fs.readFileSync('ads.txt','utf8').trim()!==expected)fail.push('ads.txt: publisher line mismatch');
 if(/<loc>[^<]*\.html/i.test(fs.readFileSync('sitemap.xml','utf8')))fail.push('sitemap.xml: redirected .html URL');
 const consent=fs.readFileSync('cookie-consent.js','utf8');if(!/data-consent-adsense/.test(consent)||!/reopenCookiePreferences/.test(consent))fail.push('cookie-consent.js: consent gate missing');
+const worker=fs.readFileSync('_worker.js','utf8');
+const objectLiteral=name=>{const start=worker.indexOf(`const ${name}={`);if(start<0)return null;const open=worker.indexOf('{',start);let depth=0,quote=null,escaped=false;for(let i=open;i<worker.length;i++){const c=worker[i];if(quote){if(escaped)escaped=false;else if(c==='\\')escaped=true;else if(c===quote)quote=null;continue}if(c==='"'||c==="'"){quote=c;continue}if(c==='{')depth++;if(c==='}'&&--depth===0)return worker.slice(open,i+1)}return null};
+const infoLiteral=objectLiteral('INFO'),howLiteral=objectLiteral('HOW');
+if(!infoLiteral||!howLiteral)fail.push('_worker.js: unique content maps missing');
+else{const info=Function(`return (${infoLiteral})`)(),how=Function(`return (${howLiteral})`)();for(const key of Object.keys(info)){if(!how[key]||how[key].length<80)fail.push(`_worker.js: specific instructions missing for ${key}`);if(!Array.isArray(info[key].use)||info[key].use.length<2)fail.push(`_worker.js: specific use cases missing for ${key}`)}if(Object.keys(how).some(key=>!info[key]))fail.push('_worker.js: instruction map contains an unknown tool')}
 if(fail.length){console.error(fail.join('\n'));process.exit(1)}console.log(`MyCalcTools integrity passed (${files.length} HTML files)`);
