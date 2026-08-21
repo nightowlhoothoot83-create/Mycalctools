@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 420" role="img" aria-labelledby="title desc">
+  <title id="title">How to measure mulch coverage</title>
+  <desc id="desc">Diagram showing a garden bed measured by length and width, mulch depth, and the calculation from area and depth to cubic metres and bags.</desc>
+  <rect width="960" height="420" rx="28" fill="#f7fbf8"/>
+  <text x="48" y="62" font-family="Arial,sans-serif" font-size="30" font-weight="700" fill="#183a2d">How to measure for mulch</text>
+  <text x="48" y="93" font-family="Arial,sans-serif" font-size="17" fill="#4d665c">Measure the bed, choose a finished depth, then let the calculator convert it to volume and bags.</text>
+  <g transform="translate(50 132)">
+    <rect x="0" y="0" width="350" height="190" rx="22" fill="#dfeedd" stroke="#2d7658" stroke-width="3"/>
+    <path d="M22 140 C85 70 150 165 215 82 C270 15 315 65 332 35 L332 170 L22 170Z" fill="#9f7045" opacity=".82"/>
+    <g fill="#5f913f"><circle cx="72" cy="88" r="25"/><circle cx="137" cy="64" r="21"/><circle cx="210" cy="100" r="28"/><circle cx="285" cy="68" r="23"/></g>
+    <line x1="12" y1="184" x2="338" y2="184" stroke="#183a2d" stroke-width="2"/>
+    <path d="M12 184 l16 -8 v16zM338 184 l-16 -8 v16z" fill="#183a2d"/>
+    <text x="146" y="214" font-family="Arial,sans-serif" font-size="19" font-weight="700" fill="#183a2d">Length</text>
+    <line x1="-15" y1="10" x2="-15" y2="172" stroke="#183a2d" stroke-width="2"/>
+    <path d="M-15 10 l-8 16 h16zM-15 172 l-8 -16 h16z" fill="#183a2d"/>
+    <text x="-46" y="102" transform="rotate(-90 -46 102)" font-family="Arial,sans-serif" font-size="19" font-weight="700" fill="#183a2d">Width</text>
+  </g>
+  <g transform="translate(454 135)">
+    <rect x="0" y="0" width="180" height="185" rx="20" fill="#fff" stroke="#d9e6df" stroke-width="2"/>
+    <text x="24" y="38" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#183a2d">Choose depth</text>
+    <rect x="34" y="74" width="112" height="67" rx="8" fill="#9f7045"/>
+    <rect x="34" y="62" width="112" height="12" rx="5" fill="#c99a62"/>
+    <line x1="158" y1="62" x2="158" y2="141" stroke="#2d7658" stroke-width="3"/>
+    <path d="M158 62 l-7 14 h14zM158 141 l-7 -14 h14z" fill="#2d7658"/>
+    <text x="70" y="170" font-family="Arial,sans-serif" font-size="16" fill="#4d665c">e.g. 7.5 cm</text>
+  </g>
+  <g transform="translate(680 128)">
+    <rect x="0" y="0" width="230" height="200" rx="22" fill="#183a2d"/>
+    <text x="24" y="42" font-family="Arial,sans-serif" font-size="19" font-weight="700" fill="#fff">Calculator does the rest</text>
+    <text x="24" y="82" font-family="Arial,sans-serif" font-size="17" fill="#d7eee5">Area × depth</text>
+    <text x="24" y="112" font-family="Arial,sans-serif" font-size="17" fill="#d7eee5">+ waste allowance</text>
+    <text x="24" y="142" font-family="Arial,sans-serif" font-size="17" fill="#d7eee5">= cubic metres</text>
+    <text x="24" y="172" font-family="Arial,sans-serif" font-size="17" fill="#d7eee5">= litres + bags + cost</text>
+  </g>
+</svg>
