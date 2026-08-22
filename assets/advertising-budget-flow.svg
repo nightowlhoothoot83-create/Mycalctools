@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 360" role="img" aria-labelledby="title desc">
+<title id="title">Advertising budget break-even flow</title>
+<desc id="desc">A four-step flow showing sale value minus direct costs and fees equals contribution margin, contribution margin adjusted for retained profit equals maximum customer acquisition cost, conversion rate translates that into a maximum cost per click, and planned clicks determine a safe test budget.</desc>
+<rect width="900" height="360" rx="24" fill="#f8fafc"/>
+<g font-family="Arial,Helvetica,sans-serif" fill="#111827">
+<text x="450" y="42" text-anchor="middle" font-size="26" font-weight="700">Work backwards from profit to a safe ad budget</text>
+<text x="450" y="70" text-anchor="middle" font-size="16" fill="#4b5563">Use your own margins and conversion rate instead of a generic % of revenue</text>
+<g>
+<rect x="35" y="120" width="190" height="150" rx="18" fill="#ffffff" stroke="#d1d5db"/>
+<text x="130" y="153" text-anchor="middle" font-size="18" font-weight="700">1. Sale economics</text>
+<text x="130" y="185" text-anchor="middle" font-size="15">Sale value</text>
+<text x="130" y="208" text-anchor="middle" font-size="15">− product/delivery costs</text>
+<text x="130" y="231" text-anchor="middle" font-size="15">− platform/payment fees</text>
+<text x="130" y="258" text-anchor="middle" font-size="15" font-weight="700">= Contribution margin</text>
+</g>
+<g>
+<rect x="250" y="120" width="190" height="150" rx="18" fill="#ffffff" stroke="#d1d5db"/>
+<text x="345" y="153" text-anchor="middle" font-size="18" font-weight="700">2. Profit target</text>
+<text x="345" y="188" text-anchor="middle" font-size="15">Choose how much profit</text>
+<text x="345" y="211" text-anchor="middle" font-size="15">you want to retain</text>
+<text x="345" y="246" text-anchor="middle" font-size="15" font-weight="700">= Maximum CAC</text>
+</g>
+<g>
+<rect x="465" y="120" width="190" height="150" rx="18" fill="#ffffff" stroke="#d1d5db"/>
+<text x="560" y="153" text-anchor="middle" font-size="18" font-weight="700">3. Conversion rate</text>
+<text x="560" y="188" text-anchor="middle" font-size="15">Maximum CAC ×</text>
+<text x="560" y="211" text-anchor="middle" font-size="15">conversion rate</text>
+<text x="560" y="246" text-anchor="middle" font-size="15" font-weight="700">= Break-even CPC</text>
+</g>
+<g>
+<rect x="680" y="120" width="185" height="150" rx="18" fill="#ffffff" stroke="#d1d5db"/>
+<text x="772.5" y="153" text-anchor="middle" font-size="18" font-weight="700">4. Test size</text>
+<text x="772.5" y="188" text-anchor="middle" font-size="15">Break-even CPC ×</text>
+<text x="772.5" y="211" text-anchor="middle" font-size="15">planned clicks</text>
+<text x="772.5" y="246" text-anchor="middle" font-size="15" font-weight="700">= Safe test budget</text>
+</g>
+<g fill="#6b7280" font-size="30" font-weight="700">
+<text x="237" y="205" text-anchor="middle">→</text>
+<text x="452" y="205" text-anchor="middle">→</text>
+<text x="667" y="205" text-anchor="middle">→</text>
+</g>
+<text x="450" y="320" text-anchor="middle" font-size="15" fill="#4b5563">Guardrail, not guarantee: actual CPC, conversion rate, refunds and repeat purchases can move the result.</text>
+</g>
+</svg>
