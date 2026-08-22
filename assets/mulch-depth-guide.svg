@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 460" role="img" aria-labelledby="title desc">
+<title id="title">Mulch coverage visual guide</title>
+<desc id="desc">Diagram showing garden area, mulch depth and the volume calculation used to estimate cubic metres, litres and bag quantities.</desc>
+<rect width="900" height="460" rx="28" fill="#111827"/>
+<text x="450" y="48" text-anchor="middle" fill="#f9fafb" font-family="Arial,sans-serif" font-size="28" font-weight="700">From garden bed to mulch order</text>
+<g font-family="Arial,sans-serif">
+<rect x="55" y="95" width="230" height="210" rx="18" fill="#1f2937" stroke="#6b7280"/>
+<rect x="90" y="145" width="160" height="100" rx="10" fill="#374151"/>
+<path d="M90 245h160" stroke="#d1d5db" stroke-width="4"/>
+<path d="M115 245v26M225 245v26" stroke="#d1d5db" stroke-width="3"/>
+<text x="170" y="130" text-anchor="middle" fill="#f9fafb" font-size="20" font-weight="700">1. Measure area</text>
+<text x="170" y="285" text-anchor="middle" fill="#d1d5db" font-size="17">Example: 50 m²</text>
+<rect x="335" y="95" width="230" height="210" rx="18" fill="#1f2937" stroke="#6b7280"/>
+<rect x="385" y="205" width="130" height="50" rx="8" fill="#374151"/>
+<line x1="535" y1="205" x2="535" y2="255" stroke="#d1d5db" stroke-width="3"/>
+<path d="M527 213l8-8 8 8M527 247l8 8 8-8" fill="none" stroke="#d1d5db" stroke-width="3"/>
+<text x="450" y="130" text-anchor="middle" fill="#f9fafb" font-size="20" font-weight="700">2. Choose depth</text>
+<text x="450" y="285" text-anchor="middle" fill="#d1d5db" font-size="17">Example: 7.5 cm</text>
+<rect x="615" y="95" width="230" height="210" rx="18" fill="#1f2937" stroke="#6b7280"/>
+<text x="730" y="130" text-anchor="middle" fill="#f9fafb" font-size="20" font-weight="700">3. Order volume</text>
+<text x="730" y="177" text-anchor="middle" fill="#d1d5db" font-size="17">50 × 0.075 = 3.75 m³</text>
+<text x="730" y="210" text-anchor="middle" fill="#d1d5db" font-size="17">+ 10% allowance</text>
+<text x="730" y="247" text-anchor="middle" fill="#f9fafb" font-size="21" font-weight="700">4.13 m³</text>
+<text x="730" y="278" text-anchor="middle" fill="#d1d5db" font-size="16">≈ 4,125 L ≈ 83 × 50 L bags</text>
+<path d="M285 200h44M565 200h44" stroke="#9ca3af" stroke-width="4" stroke-linecap="round"/>
+<path d="M319 190l10 10-10 10M599 190l10 10-10 10" fill="none" stroke="#9ca3af" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="105" y="340" width="690" height="72" rx="16" fill="#1f2937"/>
+<text x="450" y="370" text-anchor="middle" fill="#f9fafb" font-size="18" font-weight="700">Core formula</text>
+<text x="450" y="397" text-anchor="middle" fill="#d1d5db" font-size="17">Area (m²) × depth (m) = volume (m³), then add settling / waste allowance</text>
+</g>
+</svg>
