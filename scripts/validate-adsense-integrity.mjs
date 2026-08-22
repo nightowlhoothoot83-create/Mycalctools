@@ -19,4 +19,17 @@ const objectLiteral=name=>{const start=worker.indexOf(`const ${name}={`);if(star
 const infoLiteral=objectLiteral('INFO'),howLiteral=objectLiteral('HOW');
 if(!infoLiteral||!howLiteral)fail.push('_worker.js: unique content maps missing');
 else{const info=Function(`return (${infoLiteral})`)(),how=Function(`return (${howLiteral})`)();for(const key of Object.keys(info)){if(!how[key]||how[key].length<80)fail.push(`_worker.js: specific instructions missing for ${key}`);if(!Array.isArray(info[key].use)||info[key].use.length<2)fail.push(`_worker.js: specific use cases missing for ${key}`)}if(Object.keys(how).some(key=>!info[key]))fail.push('_worker.js: instruction map contains an unknown tool')}
+
+const bmi=fs.readFileSync('bmi-calculator.html','utf8');
+for(const marker of ['data-adg-enrichment="true"','How BMI is calculated','BMI range guide','Worked BMI example','role="img"']){
+  if(!bmi.includes(marker))fail.push(`bmi-calculator.html: missing enrichment marker ${marker}`);
+}
+if(/dates, numbers or options|household planning, school or work tasks/i.test(bmi))fail.push('bmi-calculator.html: generic template copy remains');
+
+const mulch=fs.readFileSync('mulch-coverage-cost-calculator.html','utf8');
+for(const marker of ['Mulch depth at a glance','Worked example','role="img"','How do I convert mulch depth']){
+  if(!mulch.includes(marker))fail.push(`mulch-coverage-cost-calculator.html: missing enrichment marker ${marker}`);
+}
+if((mulch.match(/class="faq-item"/g)||[]).length<4)fail.push('mulch-coverage-cost-calculator.html: expected at least four useful FAQs');
+
 if(fail.length){console.error(fail.join('\n'));process.exit(1)}console.log(`MyCalcTools integrity passed (${files.length} HTML files)`);
