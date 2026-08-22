@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+  <title id="title">Tree planting spacing and order quantity guide</title>
+  <desc id="desc">A dark themed planting diagram showing three metre row spacing, two metre plant spacing, excluded land, usable planting area and the worked example from one hectare to 1,558 plants including a ten percent replacement allowance.</desc>
+  <defs>
+    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#15151E"/>
+      <stop offset="1" stop-color="#1C1C28"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,4 L0,8 z" fill="#06d6ff"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="700" rx="28" fill="#080810"/>
+  <rect x="32" y="32" width="1136" height="636" rx="24" fill="url(#panel)" stroke="#2c2c3d"/>
+  <text x="70" y="90" fill="#EEEAF8" font-family="Arial, sans-serif" font-size="34" font-weight="700">From spacing plan to plant order</text>
+  <text x="70" y="126" fill="#A0A0C0" font-family="Arial, sans-serif" font-size="20">Use the planting area that is actually available, then allow for replacements.</text>
+
+  <g transform="translate(70 170)">
+    <rect width="500" height="360" rx="20" fill="#101018" stroke="#353548"/>
+    <text x="28" y="42" fill="#86EFAC" font-family="Arial, sans-serif" font-size="22" font-weight="700">Plan view</text>
+    <rect x="28" y="68" width="444" height="240" rx="14" fill="#142019" stroke="#2d6b45"/>
+    <path d="M28 246 C100 205,145 275,220 235 S355 190,472 230 L472 308 L28 308 Z" fill="#182735" opacity="0.95"/>
+    <text x="302" y="291" fill="#A0A0C0" font-family="Arial, sans-serif" font-size="15">excluded: water / track</text>
+    <g fill="#86EFAC">
+      <circle cx="82" cy="102" r="8"/><circle cx="162" cy="102" r="8"/><circle cx="242" cy="102" r="8"/><circle cx="322" cy="102" r="8"/><circle cx="402" cy="102" r="8"/>
+      <circle cx="82" cy="162" r="8"/><circle cx="162" cy="162" r="8"/><circle cx="242" cy="162" r="8"/><circle cx="322" cy="162" r="8"/><circle cx="402" cy="162" r="8"/>
+      <circle cx="82" cy="222" r="8"/><circle cx="162" cy="222" r="8"/><circle cx="242" cy="222" r="8"/><circle cx="322" cy="222" r="8"/>
+    </g>
+    <g stroke="#06d6ff" stroke-width="2" fill="none" marker-start="url(#arrow)" marker-end="url(#arrow)">
+      <line x1="82" y1="132" x2="162" y2="132"/>
+      <line x1="445" y1="102" x2="445" y2="162"/>
+    </g>
+    <text x="101" y="124" fill="#06d6ff" font-family="Arial, sans-serif" font-size="15">2 m plant spacing</text>
+    <text x="338" y="141" fill="#06d6ff" font-family="Arial, sans-serif" font-size="15">3 m rows</text>
+    <text x="28" y="342" fill="#EEEAF8" font-family="Arial, sans-serif" font-size="18">Usable area ÷ (row spacing × plant spacing)</text>
+  </g>
+
+  <g transform="translate(610 170)">
+    <rect width="520" height="360" rx="20" fill="#101018" stroke="#353548"/>
+    <text x="28" y="42" fill="#86EFAC" font-family="Arial, sans-serif" font-size="22" font-weight="700">Worked example</text>
+    <g font-family="Arial, sans-serif">
+      <text x="28" y="90" fill="#A0A0C0" font-size="18">1 hectare</text><text x="470" y="90" fill="#EEEAF8" font-size="20" text-anchor="end">10,000 m²</text>
+      <text x="28" y="128" fill="#A0A0C0" font-size="18">Minus 15% excluded</text><text x="470" y="128" fill="#EEEAF8" font-size="20" text-anchor="end">8,500 m² usable</text>
+      <line x1="28" y1="148" x2="492" y2="148" stroke="#353548"/>
+      <text x="28" y="190" fill="#A0A0C0" font-size="18">3 m rows × 2 m plants</text><text x="470" y="190" fill="#EEEAF8" font-size="20" text-anchor="end">6 m² / position</text>
+      <text x="28" y="228" fill="#A0A0C0" font-size="18">8,500 ÷ 6</text><text x="470" y="228" fill="#86EFAC" font-size="22" font-weight="700" text-anchor="end">1,416 positions</text>
+      <text x="28" y="266" fill="#A0A0C0" font-size="18">+ 10% replacement allowance</text><text x="470" y="266" fill="#86EFAC" font-size="22" font-weight="700" text-anchor="end">1,558 plants</text>
+      <text x="28" y="304" fill="#A0A0C0" font-size="18">At $4 per plant</text><text x="470" y="304" fill="#06d6ff" font-size="22" font-weight="700" text-anchor="end">$6,232</text>
+      <text x="28" y="340" fill="#A0A0C0" font-size="15">Indicative only. Species mix, terrain and ecology still shape the final plan.</text>
+    </g>
+  </g>
+
+  <g transform="translate(70 565)" font-family="Arial, sans-serif">
+    <rect width="1060" height="70" rx="16" fill="#121826" stroke="#29445a"/>
+    <text x="28" y="30" fill="#06d6ff" font-size="18" font-weight="700">Useful rule</text>
+    <text x="28" y="54" fill="#EEEAF8" font-size="18">Exclude tracks, water, structures and natural-regeneration areas before calculating plant density.</text>
+  </g>
+</svg>
