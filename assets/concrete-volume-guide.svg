@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 620" role="img" aria-labelledby="title desc">
+  <title id="title">Concrete volume guide for slabs and post holes</title>
+  <desc id="desc">Shows how slab dimensions and round post-hole dimensions convert to cubic metres, then to approximate premix bag counts.</desc>
+  <rect width="1200" height="620" rx="32" fill="#07111f"/>
+  <text x="60" y="68" fill="#ffffff" font-family="Arial, sans-serif" font-size="34" font-weight="700">Concrete volume at a glance</text>
+  <text x="60" y="106" fill="#aeb8cb" font-family="Arial, sans-serif" font-size="20">Use the calculator for exact totals. This diagram explains what the numbers mean.</text>
+
+  <rect x="58" y="148" width="520" height="310" rx="24" fill="#0d1a2d" stroke="#f472b6" stroke-width="2"/>
+  <text x="88" y="190" fill="#f9a8d4" font-family="Arial, sans-serif" font-size="26" font-weight="700">Slab / strip footing</text>
+  <polygon points="120,300 300,238 470,300 290,362" fill="#1f3550" stroke="#cbd5e1" stroke-width="2"/>
+  <polygon points="120,300 120,340 290,402 290,362" fill="#14273f" stroke="#cbd5e1" stroke-width="2"/>
+  <polygon points="290,362 470,300 470,340 290,402" fill="#0f2137" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="162" y="246" fill="#ffffff" font-family="Arial, sans-serif" font-size="20">Length</text>
+  <text x="390" y="270" fill="#ffffff" font-family="Arial, sans-serif" font-size="20">Width</text>
+  <text x="486" y="330" fill="#ffffff" font-family="Arial, sans-serif" font-size="20">Depth</text>
+  <text x="90" y="430" fill="#ffffff" font-family="Arial, sans-serif" font-size="24" font-weight="700">m³ = length × width × depth</text>
+
+  <rect x="622" y="148" width="520" height="310" rx="24" fill="#0d1a2d" stroke="#f472b6" stroke-width="2"/>
+  <text x="652" y="190" fill="#f9a8d4" font-family="Arial, sans-serif" font-size="26" font-weight="700">Round post holes</text>
+  <ellipse cx="790" cy="270" rx="105" ry="38" fill="#1f3550" stroke="#cbd5e1" stroke-width="2"/>
+  <path d="M685 270v110c0 21 47 38 105 38s105-17 105-38V270" fill="#14273f" stroke="#cbd5e1" stroke-width="2"/>
+  <ellipse cx="790" cy="380" rx="105" ry="38" fill="#0f2137" stroke="#cbd5e1" stroke-width="2"/>
+  <line x1="685" y1="245" x2="895" y2="245" stroke="#ffffff" stroke-width="2"/>
+  <text x="748" y="232" fill="#ffffff" font-family="Arial, sans-serif" font-size="20">Diameter</text>
+  <text x="915" y="340" fill="#ffffff" font-family="Arial, sans-serif" font-size="20">Depth</text>
+  <text x="654" y="430" fill="#ffffff" font-family="Arial, sans-serif" font-size="22" font-weight="700">m³ = π × (diameter ÷ 2)² × depth × holes</text>
+
+  <rect x="58" y="492" width="1084" height="82" rx="20" fill="#101d31" stroke="#2a3b55"/>
+  <text x="88" y="526" fill="#ffffff" font-family="Arial, sans-serif" font-size="22" font-weight="700">Then convert volume to premix bags</text>
+  <text x="88" y="555" fill="#aeb8cb" font-family="Arial, sans-serif" font-size="18">Calculator assumptions: about 0.0105 m³ per 20 kg bag and 0.0135 m³ per 25 kg bag. Always round bags up.</text>
+</svg>
