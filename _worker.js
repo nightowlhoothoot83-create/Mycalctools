@@ -84,18 +84,20 @@ function rewrite(html,url){
  if(s){const p=/<section\b[^>]*class=["'][^"']*\btool-info-section\b[^"']*["'][^>]*>[\s\S]*?<\/section>/i;if(p.test(html))html=html.replace(p,s);else if(/<div\b[^>]*class=["'][^"']*\brelated-section\b/i.test(html))html=html.replace(/<div\b[^>]*class=["'][^"']*\brelated-section\b/i,s+"$&");else html=html.replace(/<\/body>/i,s+"</body>")}
  return html;
 }
-async function getAsset(request,env,p){
+async function getAsset(request,env,p,assetHost="mycalctools.net"){
  const u=new URL(request.url);
- u.protocol="https:";u.hostname="mycalctools.net";u.port="";u.pathname=p;
+ u.protocol="https:";u.hostname=assetHost;u.port="";u.pathname=p;
  return env.ASSETS.fetch(new Request(u.href,request));
 }
 export default{async fetch(request,env){
  const u=new URL(request.url);
- if(u.protocol!=="https:"||u.hostname.toLowerCase()!=="mycalctools.net"){const t=new URL(u.href);t.protocol="https:";t.hostname="mycalctools.net";t.port="";return Response.redirect(t.href,301)}
+ const host=u.hostname.toLowerCase();
+ const isPreview=host==="mycalctools.pages.dev"||host.endsWith(".mycalctools.pages.dev");
+ if(!isPreview&&(u.protocol!=="https:"||host!=="mycalctools.net")){const t=new URL(u.href);t.protocol="https:";t.hostname="mycalctools.net";t.port="";return Response.redirect(t.href,301)}
  const aliases={"/privacy-policy":"/privacy","/privacy-policy/":"/privacy","/terms-of-use":"/terms","/terms-of-use/":"/terms"};
  if(aliases[u.pathname]){const t=new URL(u.href);t.pathname=aliases[u.pathname];return Response.redirect(t.href,301)}
  const p=cleanPath(u.pathname);if(p!==u.pathname){const t=new URL(u.href);t.pathname=p;return Response.redirect(t.href,301)}
- const r=await getAsset(request,env,p),ct=r.headers.get("content-type")||"";
+ const r=await getAsset(request,env,p,isPreview?host:"mycalctools.net"),ct=r.headers.get("content-type")||"";
  if(r.ok&&p==="/script.js"){
    let js=await r.text();
    js=js.replace(/\/index\.html/g,"/").replace(/\.html(?=[\"'?#])/g,"");
