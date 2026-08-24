@@ -32,4 +32,26 @@ for(const marker of ['Mulch depth at a glance','Worked example','role="img"','Ho
 }
 if((mulch.match(/class="faq-item"/g)||[]).length<4)fail.push('mulch-coverage-cost-calculator.html: expected at least four useful FAQs');
 
+
+const lockedVisuals = {
+  'bmi-calculator.html': '/assets/bmi-range-guide.svg',
+  'advertising-budget-break-even-calculator.html': '/assets/advertising-budget-flow.svg',
+  'trees-per-acre-hectare-calculator.html': '/assets/trees-spacing-guide.svg',
+  'mulch-coverage-cost-calculator.html': '/assets/mulch-depth-guide.svg',
+  'generator-vs-solar-cost-calculator.html': '/assets/generator-vs-solar-cost-guide.svg',
+  'concrete-calculator.html': '/assets/concrete-volume-guide.svg',
+  'electricity-calculator.html': '/assets/electricity-running-cost-guide.svg'
+};
+for (const [page, asset] of Object.entries(lockedVisuals)) {
+  if (!fs.existsSync(page)) fail.push(`${page}: locked visual page missing`);
+  else if (!fs.readFileSync(page, 'utf8').includes(`src="${asset}"`)) fail.push(`${page}: locked visual reference missing (${asset})`);
+  const assetPath = asset.slice(1);
+  if (!fs.existsSync(assetPath)) fail.push(`${assetPath}: locked visual asset missing`);
+}
+const home = fs.readFileSync('index.html', 'utf8');
+if (!home.includes('ATO-aligned FY2026-27 with LITO')) fail.push('index.html: Australian Tax description must remain FY2026-27');
+if (!home.includes('>ATO 2026-27</span>')) fail.push('index.html: Australian Tax tag must remain ATO 2026-27');
+if (/ATO 2024-25/.test(home)) fail.push('index.html: stale Australian Tax year returned');
+if (!home.includes('&copy; 2026 MyCalcTools')) fail.push('index.html: homepage copyright must remain 2026');
+
 if(fail.length){console.error(fail.join('\n'));process.exit(1)}console.log(`MyCalcTools integrity passed (${files.length} HTML files)`);
