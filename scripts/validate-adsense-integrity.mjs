@@ -15,6 +15,8 @@ const requiredNew=['subscription-cancellation-savings-calculator','online-busine
 for(const slug of requiredNew){if(!fs.existsSync(`${slug}.html`))fail.push(`${slug}: page missing`);if(!shared.includes(`file: '${slug}'`))fail.push(`${slug}: missing from search list`);if(!fs.readFileSync('sitemap.xml','utf8').includes(`/${slug}</loc>`))fail.push(`${slug}: missing from XML sitemap`)}
 for(const file of ['index.html','about.html','sitemap.html','script.js']){const s=fs.readFileSync(file,'utf8');if(/(?:46 free|46 tools|Search 46|includes 46)/i.test(s))fail.push(`${file}: stale 46-tool reference`)}
 const worker=fs.readFileSync('_worker.js','utf8');
+if(!worker.includes('endsWith(".mycalctools.pages.dev")'))fail.push('_worker.js: branch preview host allowance missing');
+if(!worker.includes('isPreview?host:"mycalctools.net"'))fail.push('_worker.js: preview assets are not isolated from production');
 const objectLiteral=name=>{const start=worker.indexOf(`const ${name}={`);if(start<0)return null;const open=worker.indexOf('{',start);let depth=0,quote=null,escaped=false;for(let i=open;i<worker.length;i++){const c=worker[i];if(quote){if(escaped)escaped=false;else if(c==='\\')escaped=true;else if(c===quote)quote=null;continue}if(c==='"'||c==="'"){quote=c;continue}if(c==='{')depth++;if(c==='}'&&--depth===0)return worker.slice(open,i+1)}return null};
 const infoLiteral=objectLiteral('INFO'),howLiteral=objectLiteral('HOW');
 if(!infoLiteral||!howLiteral)fail.push('_worker.js: unique content maps missing');
