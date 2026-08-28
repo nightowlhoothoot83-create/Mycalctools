@@ -51,6 +51,14 @@ if(!worker.includes('endsWith(".mycalctools.pages.dev")'))fail.push('_worker.js:
 if(!worker.includes('isPreview?host:"mycalctools.net"'))fail.push('_worker.js: preview assets are not isolated from production');
 if(!worker.includes('data-adg-unique-info="true"'))fail.push('_worker.js: unique-content marker missing');
 if(!worker.includes('data-static-seo')||!worker.includes('html=html.replace(p,s)'))fail.push('_worker.js: obsolete filler removal or tool-info replacement missing');
+const insurance=fs.readFileSync('insurance-calculator.html','utf8');
+for(const marker of ['It does not calculate premiums or compare policies.','Enter annual income and the debts','estimates possible coverage amounts, not premiums']){
+  if(!insurance.includes(marker))fail.push(`insurance-calculator.html: missing tool-specific clarification ${marker}`);
+}
+if(/Select the type of insurance|indicative cover amount and premium range|compare indicative annual premiums/i.test(insurance))fail.push('insurance-calculator.html: content describes controls or premium results the tool does not provide');
+for(const marker of ['Enter annual income, outstanding debts, number of dependants and home value','This tool estimates coverage amounts, not premiums']){
+  if(!worker.includes(marker))fail.push(`_worker.js: insurance guidance override missing ${marker}`);
+}
 const objectLiteral=name=>{const start=worker.indexOf(`const ${name}={`);if(start<0)return null;const open=worker.indexOf('{',start);let depth=0,quote=null,escaped=false;for(let i=open;i<worker.length;i++){const c=worker[i];if(quote){if(escaped)escaped=false;else if(c==='\\')escaped=true;else if(c===quote)quote=null;continue}if(c==='"'||c==="'"){quote=c;continue}if(c==='{')depth++;if(c==='}'&&--depth===0)return worker.slice(open,i+1)}return null};
 const infoLiteral=objectLiteral('INFO'),howLiteral=objectLiteral('HOW');
 if(!infoLiteral||!howLiteral)fail.push('_worker.js: unique content maps missing');
