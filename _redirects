@@ -14,7 +14,6 @@ http://mycalctools.pages.dev/* https://mycalctools.net/:splat 301!
 /australian-tax-calculator.html /australian-tax-calculator 301!
 /bas-gst-calculator.html /bas-gst-calculator 301!
 /bmi-calculator.html /bmi-calculator 301!
-/boiled-egg-calculator.html /boiled-egg-calculator 301!
 /calorie-calculator.html /calorie-calculator 301!
 /concrete-calculator.html /concrete-calculator 301!
 /contact.html /contact 301!
@@ -61,3 +60,5 @@ http://mycalctools.pages.dev/* https://mycalctools.net/:splat 301!
 /terms.html /terms 301!
 /tip-calculator.html /tip-calculator 301!
 /water-intake-calculator.html /water-intake-calculator 301!
+/bmi-calculator /bmi-calculator.html 200
+/calorie-calculator /calorie-calculator.html 200
