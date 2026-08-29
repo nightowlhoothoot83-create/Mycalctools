@@ -7,118 +7,21 @@
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="google-adsense-account" content="ca-pub-1904958390525375">
 <link rel="stylesheet" href="/style.css">
-
 </head><body>
 <div id="brand-strip"></div><div id="nav"></div>
-
-
 <div class="tool-page"><div class="container">
 <nav class="breadcrumb"><a href="/">Home</a> › <a href="/#lifestyle">Lifestyle</a> › Age Calculator</nav>
-<div class="tool-header">
-  <div class="tool-header-icon" style="background:rgba(244,114,182,0.12);border:1px solid rgba(244,114,182,0.3)">🎂</div>
-  <h1>Age Calculator</h1>
-  <p>Calculate your exact age and how many days until your next birthday.</p>
-  <div style="margin-top:10px"><span class="tag lifestyle">Exact Age</span><span class="tag lifestyle">Birthday Countdown</span></div>
-</div>
-<div class="tool-layout">
-<div class="calc-card">
-<div class="field"><label>Date of Birth</label><input type="date" id="ageDob"></div>
-  <div class="field"><label>As of Date</label><input type="date" id="ageAsOf"></div>
-  <button class="btn-calc" onclick="calcAge()">Calculate Age</button>
-<div class="result-box lifestyle" id="ageR">
-    <div class="result-value lifestyle" id="ageRVal"></div>
-    <div class="result-label" id="ageRLbl"></div>
-    <div class="result-grid" id="ageRGrid"></div>
-  </div>
-<div class="crosssite-box">📅 <strong>Also on MyCalendarTools:</strong> <a href="https://www.mycalendartools.net" target="_blank">Birthday Countdown & Date Tools</a></div>
-</div>
-<div class="sidebar">
-  <div class="info-card"><h3>About</h3><p>Calculate your exact age and how many days until your next birthday.</p></div>
-
-</div>
-</div>
-<section class="tool-info-section" aria-label="Tool information">
-  <div class="tool-info-panel">
-    <h2>About this tool</h2>
-    <p>Calculate your exact age and how many days until your next birthday. This tool is designed to give you a quick, clear answer without any sign-up or extra steps involved.</p>
-  </div>
-  <div class="tool-info-panel">
-    <h2>How to use it</h2>
-    <ol>
-      <li>Enter the dates, amounts or details the calculator asks for.</li>
-      <li>Pick the option that matches your specific situation.</li>
-      <li>Calculate to see your result laid out clearly.</li>
-      <li>Adjust and recalculate to compare a few different options.</li>
-    </ol>
-  </div>
-  <div class="tool-info-panel">
-    <h2>Common use cases</h2>
-    <ul>
-      <li>Planning ahead for an upcoming date or milestone.</li>
-      <li>Working out timing for a trip, event or project.</li>
-      <li>Comparing a couple of options before deciding.</li>
-      <li>Getting a quick answer without digging out a spreadsheet.</li>
-    </ul>
-  </div>
+<div class="tool-header"><div class="tool-header-icon" style="background:rgba(244,114,182,0.12);border:1px solid rgba(244,114,182,0.3)">🎂</div><h1>Age Calculator</h1><p>Calculate your exact age and how many days until your next birthday.</p><div style="margin-top:10px"><span class="tag lifestyle">Exact Age</span><span class="tag lifestyle">Birthday Countdown</span></div></div>
+<div class="tool-layout"><div class="calc-card"><div class="field"><label>Date of Birth</label><input type="date" id="ageDob"></div><div class="field"><label>As of Date</label><input type="date" id="ageAsOf"></div><button class="btn-calc" onclick="calcAge()">Calculate Age</button><div class="result-box lifestyle" id="ageR"><div class="result-value lifestyle" id="ageRVal"></div><div class="result-label" id="ageRLbl"></div><div class="result-grid" id="ageRGrid"></div></div><div class="crosssite-box">📅 <strong>Also on MyCalendarTools:</strong> <a href="https://www.mycalendartools.net" target="_blank">Birthday Countdown & Date Tools</a></div></div><div class="sidebar"><div class="info-card"><h3>What it shows</h3><p>Your age in completed years, remaining months and days, total days lived, and the date of your next birthday.</p></div></div></div>
+<section class="tool-info-section" aria-label="Age calculator information">
+<div class="tool-info-panel"><h2>How the age calculation works</h2><p>The calculator compares your date of birth with the “as of” date you choose. It first counts completed years, then adjusts the remaining months and days so the result reads naturally instead of simply dividing a total number of days by 365. That matters around month ends, leap years and birthdays.</p></div>
+<div class="tool-info-panel"><h2>How to use it</h2><ol><li>Enter the person's date of birth.</li><li>Leave the “as of” date set to today for a current age, or choose another date to check age at a past or future point.</li><li>Select <strong>Calculate Age</strong>.</li><li>Read the completed years, months and days separately, plus the next-birthday date and countdown.</li></ol></div>
+<div class="tool-info-panel"><h2>Useful real-world examples</h2><ul><li>Checking the exact age of a child for school, sport or a birthday invitation.</li><li>Working out how old someone was on a particular historical date.</li><li>Seeing how many days remain until a birthday without manually counting calendar days.</li><li>Comparing two dates when an eligibility rule is based on age at a specific cut-off.</li></ul></div>
+<div class="tool-info-panel"><h2>What “years, months and days” means</h2><p>An age such as 31 years, 4 months and 12 days describes the calendar interval from the birth date to the selected date. It is not the same as saying someone has lived exactly 31.37 years, because calendar months have different lengths and leap years add an extra day.</p></div>
+<div class="tool-info-panel"><h2>Important limitations</h2><p>This is a calendar calculator, not proof of age. For passports, licences, legal eligibility, benefit rules or formal enrolment decisions, use the date shown on the relevant identity document and confirm the rule with the responsible organisation. Time of birth is not used, so the result changes by date rather than by the exact hour someone was born.</p></div>
 </section>
 <div class="related-section"><h2>Related Tools</h2><div class="related-grid"><a href="/date-calculator" class="related-card">🗓️ Date Calculator</a></div></div>
 </div></div>
-<script>document.addEventListener('DOMContentLoaded',function(){
-    document.getElementById('ageAsOf').value=new Date().toISOString().split('T')[0];
-    var d=new Date();d.setFullYear(d.getFullYear()-25);
-    document.getElementById('ageDob').value=d.toISOString().split('T')[0];
-  });
-  function calcAge(){
-    var dob=new Date(document.getElementById('ageDob').value);
-    var asOf=new Date(document.getElementById('ageAsOf').value);
-    if(isNaN(dob)||isNaN(asOf)||dob>=asOf) return;
-    var y=asOf.getFullYear()-dob.getFullYear();var m=asOf.getMonth()-dob.getMonth();var d=asOf.getDate()-dob.getDate();
-    if(d<0){m--;var pm=new Date(asOf.getFullYear(),asOf.getMonth(),0);d+=pm.getDate();}
-    if(m<0){y--;m+=12;}
-    var total=Math.round((asOf-dob)/86400000);
-    var next=new Date(asOf.getFullYear(),dob.getMonth(),dob.getDate());
-    if(next<=asOf) next.setFullYear(asOf.getFullYear()+1);
-    var daysUntil=Math.round((next-asOf)/86400000);
-    document.getElementById('ageR').className='result-box lifestyle visible';
-    document.getElementById('ageRVal').textContent=y;
-    document.getElementById('ageRLbl').textContent='years old';
-    document.getElementById('ageRGrid').innerHTML=
-      '<div class="result-item"><div class="result-item-label">Years</div><div class="result-item-value">'+y+'</div></div>'+
-      '<div class="result-item"><div class="result-item-label">Months</div><div class="result-item-value">'+m+'</div></div>'+
-      '<div class="result-item"><div class="result-item-label">Days</div><div class="result-item-value">'+d+'</div></div>'+
-      '<div class="result-item"><div class="result-item-label">Total Days Lived</div><div class="result-item-value">'+total.toLocaleString()+'</div></div>'+
-      '<div class="result-item"><div class="result-item-label">Next Birthday</div><div class="result-item-value">'+next.toLocaleDateString('en-AU',{day:'numeric',month:'short',year:'numeric'})+'</div></div>'+
-      '<div class="result-item"><div class="result-item-label">Days Until</div><div class="result-item-value" style="color:var(--lifestyle)">'+daysUntil+' days</div></div>';
-  }</script>
-
-<section class="static-content-section container" data-static-seo="true">
-  <h2>About this calculator</h2>
-  <p>Calculate your exact age in years, months and days. Find days until your next birthday. The Age Calculator page explains what the tool or support page provides, what information is needed and how to use the result or guidance for an everyday task.</p>
-  <p>Use Age Calculator when you need a quick answer without creating an account, downloading an app or sending your information to a third party. The tool is designed for everyday planning, comparison and checking, with results shown in the browser as soon as you enter the details.</p>
-
-  <h2>How to use Age Calculator</h2>
-  <ol>
-    <li>Enter the dates, numbers or options requested by the form on this page.</li>
-    <li>Choose any unit, country, time period or setting that applies to your situation.</li>
-    <li>Press the calculate or generate button to show the result.</li>
-    <li>Review the explanation beside the result before relying on it for planning.</li>
-  </ol>
-
-  <h2>When this page is useful</h2>
-  <p>Age Calculator is useful for quick checks, household planning, school or work tasks, content planning and comparing simple scenarios. Many visitors use these tools to avoid manual counting or spreadsheet setup for a one-off question.</p>
-  <p>The result should be treated as a practical guide rather than professional advice. For legal, financial, health, tax, pregnancy, school holiday, tide or public holiday decisions, confirm important details with an official source or qualified professional.</p>
-
-  <h2>Privacy and accuracy</h2>
-  <p>MyCalcTools tools run in your browser wherever possible. We aim to keep pages clear, lightweight and easy to read on mobile, tablet and desktop. If a page uses dates, public holidays or calendar rules, those rules can change over time, so checking the final result against the relevant authority is recommended for high-stakes decisions.</p>
-  <p>Canonical URL: <a href="/age-calculator">https://mycalctools.net/age-calculator.html</a></p>
-</section>
-<footer id="static-policy-footer" style="background:#050914;border-top:1px solid rgba(0,229,255,0.08);padding:24px;text-align:center;font-size:0.8rem;color:#8b93b0">
-  <nav aria-label="Policy links">
-    <a href="/privacy" style="color:#8b93b0;margin:0 10px;text-decoration:underline">Privacy Policy</a>
-    <a href="/terms" style="color:#8b93b0;margin:0 10px;text-decoration:underline">Terms of Use</a>
-    <a href="/about" style="color:#8b93b0;margin:0 10px;text-decoration:underline">About</a>
-    <a href="/contact" style="color:#8b93b0;margin:0 10px;text-decoration:underline">Contact</a>
-  </nav>
-  <p style="margin-top:8px">&copy; 2025 MyCalcTools &middot; Part of the Ascension Digital Group</p>
-</footer>
+<script>document.addEventListener('DOMContentLoaded',function(){document.getElementById('ageAsOf').value=new Date().toISOString().split('T')[0];var d=new Date();d.setFullYear(d.getFullYear()-25);document.getElementById('ageDob').value=d.toISOString().split('T')[0];});function calcAge(){var dob=new Date(document.getElementById('ageDob').value);var asOf=new Date(document.getElementById('ageAsOf').value);if(isNaN(dob)||isNaN(asOf)||dob>=asOf)return;var y=asOf.getFullYear()-dob.getFullYear();var m=asOf.getMonth()-dob.getMonth();var d=asOf.getDate()-dob.getDate();if(d<0){m--;var pm=new Date(asOf.getFullYear(),asOf.getMonth(),0);d+=pm.getDate();}if(m<0){y--;m+=12;}var total=Math.round((asOf-dob)/86400000);var next=new Date(asOf.getFullYear(),dob.getMonth(),dob.getDate());if(next<=asOf)next.setFullYear(asOf.getFullYear()+1);var daysUntil=Math.round((next-asOf)/86400000);document.getElementById('ageR').className='result-box lifestyle visible';document.getElementById('ageRVal').textContent=y;document.getElementById('ageRLbl').textContent='years old';document.getElementById('ageRGrid').innerHTML='<div class="result-item"><div class="result-item-label">Years</div><div class="result-item-value">'+y+'</div></div><div class="result-item"><div class="result-item-label">Months</div><div class="result-item-value">'+m+'</div></div><div class="result-item"><div class="result-item-label">Days</div><div class="result-item-value">'+d+'</div></div><div class="result-item"><div class="result-item-label">Total Days Lived</div><div class="result-item-value">'+total.toLocaleString()+'</div></div><div class="result-item"><div class="result-item-label">Next Birthday</div><div class="result-item-value">'+next.toLocaleDateString('en-AU',{day:'numeric',month:'short',year:'numeric'})+'</div></div><div class="result-item"><div class="result-item-label">Days Until</div><div class="result-item-value" style="color:var(--lifestyle)">'+daysUntil+' days</div></div>';}</script>
+<footer id="static-policy-footer" style="background:#050914;border-top:1px solid rgba(0,229,255,0.08);padding:24px;text-align:center;font-size:0.8rem;color:#8b93b0"><nav aria-label="Policy links"><a href="/privacy" style="color:#8b93b0;margin:0 10px;text-decoration:underline">Privacy Policy</a><a href="/terms" style="color:#8b93b0;margin:0 10px;text-decoration:underline">Terms of Use</a><a href="/about" style="color:#8b93b0;margin:0 10px;text-decoration:underline">About</a><a href="/contact" style="color:#8b93b0;margin:0 10px;text-decoration:underline">Contact</a></nav><p style="margin-top:8px">&copy; 2025 MyCalcTools &middot; Part of the Ascension Digital Group</p></footer>
 </body></html>
