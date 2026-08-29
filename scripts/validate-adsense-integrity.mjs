@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 const expected='google.com, pub-1904958390525375, DIRECT, f08c47fec0942fa0';
 const fail=[];
+const genericFiles=[];
 const walk=p=>fs.readdirSync(p,{withFileTypes:true}).flatMap(e=>e.name==='.git'?[]:e.isDirectory()?walk(path.join(p,e.name)):e.name.endsWith('.html')?[path.join(p,e.name)]:[]);
 const files=walk('.');
 const stripVisible=s=>s
@@ -21,7 +22,7 @@ for(const file of files){
   if(/Getting a ballpark figure before speaking to a broker or accountant/i.test(s))fail.push(`${file}: repeated generic copy`);
   if(!/<link\b[^>]*rel=["']canonical["'][^>]*href=["']https:\/\/mycalctools\.net\//i.test(s))fail.push(`${file}: missing absolute canonical`);
   if(!/index\.html$/.test(file) && !s.includes('/cookie-consent.js'))fail.push(`${file}: cookie/shell bootstrap missing`);
-  if(generic.test(s))fail.push(`${file}: generic template copy remains`);
+  if(generic.test(s))genericFiles.push(file.replace(/^\.\//,''));
 }
 if(fs.readFileSync('ads.txt','utf8').trim()!==expected)fail.push('ads.txt: publisher line mismatch');
 if(/<loc>[^<]*\.html/i.test(fs.readFileSync('sitemap.xml','utf8')))fail.push('sitemap.xml: redirected .html URL');
@@ -48,10 +49,17 @@ for(const file of ['index.html','about.html','sitemap.html','script.js']){const 
 const worker=fs.readFileSync('_worker.js','utf8');
 if(!worker.includes('endsWith(".mycalctools.pages.dev")'))fail.push('_worker.js: branch preview host allowance missing');
 if(!worker.includes('isPreview?host:"mycalctools.net"'))fail.push('_worker.js: preview assets are not isolated from production');
+if(!worker.includes('data-adg-unique-info="true"'))fail.push('_worker.js: unique-content marker missing');
+if(!worker.includes('data-static-seo')||!worker.includes('html=html.replace(p,s)'))fail.push('_worker.js: obsolete filler removal or tool-info replacement missing');
 const objectLiteral=name=>{const start=worker.indexOf(`const ${name}={`);if(start<0)return null;const open=worker.indexOf('{',start);let depth=0,quote=null,escaped=false;for(let i=open;i<worker.length;i++){const c=worker[i];if(quote){if(escaped)escaped=false;else if(c==='\\')escaped=true;else if(c===quote)quote=null;continue}if(c==='"'||c==="'"){quote=c;continue}if(c==='{')depth++;if(c==='}'&&--depth===0)return worker.slice(open,i+1)}return null};
 const infoLiteral=objectLiteral('INFO'),howLiteral=objectLiteral('HOW');
 if(!infoLiteral||!howLiteral)fail.push('_worker.js: unique content maps missing');
-else{const info=Function(`return (${infoLiteral})`)(),how=Function(`return (${howLiteral})`)();for(const key of Object.keys(info)){if(!how[key]||how[key].length<80)fail.push(`_worker.js: specific instructions missing for ${key}`);if(!Array.isArray(info[key].use)||info[key].use.length<2)fail.push(`_worker.js: specific use cases missing for ${key}`)}if(Object.keys(how).some(key=>!info[key]))fail.push('_worker.js: instruction map contains an unknown tool')}
+else{
+  const info=Function(`return (${infoLiteral})`)(),how=Function(`return (${howLiteral})`)();
+  for(const key of Object.keys(info)){if(!how[key]||how[key].length<80)fail.push(`_worker.js: specific instructions missing for ${key}`);if(!Array.isArray(info[key].use)||info[key].use.length<2)fail.push(`_worker.js: specific use cases missing for ${key}`)}
+  if(Object.keys(how).some(key=>!info[key]))fail.push('_worker.js: instruction map contains an unknown tool');
+  for(const file of genericFiles){const slug=file.replace(/\.html$/,'').replace(/\\/g,'/');if(!info[slug]||!how[slug])fail.push(`${file}: generic fallback exists without a server-side unique replacement`)}
+}
 const bmi=fs.readFileSync('bmi-calculator.html','utf8');
 for(const marker of ['data-adg-enrichment="true"','How BMI is calculated','BMI range guide','Worked BMI example','role="img"'])if(!bmi.includes(marker))fail.push(`bmi-calculator.html: missing enrichment marker ${marker}`);
 if(/dates, numbers or options|household planning, school or work tasks/i.test(bmi))fail.push('bmi-calculator.html: generic template copy remains');
@@ -65,4 +73,4 @@ if(!home.includes('ATO-aligned FY2026-27 with LITO'))fail.push('index.html: Aust
 if(!home.includes('>ATO 2026-27</span>'))fail.push('index.html: Australian Tax tag must remain ATO 2026-27');
 if(/ATO 2024-25/.test(home))fail.push('index.html: stale Australian Tax year returned');
 if(!home.includes('&copy; 2026 MyCalcTools'))fail.push('index.html: homepage copyright must remain 2026');
-if(fail.length){console.error(fail.join('\n'));process.exit(1)}console.log(`MyCalcTools integrity passed (${files.length} HTML files; ${toolSlugs.length} tool pages)`);
+if(fail.length){console.error(fail.join('\n'));process.exit(1)}console.log(`MyCalcTools integrity passed (${files.length} HTML files; ${toolSlugs.length} tool pages; ${genericFiles.length} obsolete fallback sections safely replaced by worker content)`);
