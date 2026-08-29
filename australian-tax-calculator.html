@@ -2,7 +2,7 @@
 <script src="/cookie-consent.js"></script>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Australian Tax Calculator — ATO FY2026-27 | MyCalcTools</title>
-<meta name="description" content="Calculate your Australian income tax, Medicare levy, LITO offset and take-home pay for FY2026-27. ATO-aligned calculator.">
+<meta name="description" content="Calculate an Australian resident income tax estimate, LITO offset and take-home pay for FY2026-27, with a simplified Medicare levy estimate.">
 <link rel="canonical" href="https://mycalctools.net/australian-tax-calculator">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="google-adsense-account" content="ca-pub-1904958390525375">
@@ -17,8 +17,8 @@
 <div class="tool-header">
   <div class="tool-header-icon" style="background:rgba(96,165,250,0.12);border:1px solid rgba(96,165,250,0.3)">🦘</div>
   <h1>Australian Tax Calculator</h1>
-  <p>ATO-aligned FY2026-27 tax calculator including LITO offset and Medicare levy.</p>
-  <div style="margin-top:10px"><span class="tag finance">ATO 2026-27</span><span class="tag finance">LITO + Medicare</span></div>
+  <p>FY2026-27 Australian resident income tax estimate including LITO and a simplified Medicare levy estimate.</p>
+  <div style="margin-top:10px"><span class="tag finance">ATO 2026-27 rates</span><span class="tag finance">LITO + Medicare estimate</span></div>
 </div>
 <div class="tool-layout">
 <div class="calc-card">
@@ -31,19 +31,19 @@
     <div class="result-label">take-home per year</div>
     <div class="result-grid" id="atxRGrid"></div>
   </div>
-  <p style="font-size:0.75rem;color:var(--dim);margin-top:12px">⚠ Estimates only — consult a registered tax agent for formal advice.</p>
+  <p style="font-size:0.75rem;color:var(--dim);margin-top:12px">⚠ Estimates only. Medicare levy reductions and exemptions depend on individual and family circumstances. Confirm tax outcomes with the ATO or a registered tax agent.</p>
 </div>
 <div class="sidebar">
   <div class="info-card">
-    <h3>FY2026-27 Tax Brackets</h3>
+    <h3>FY2026-27 Resident Tax Brackets</h3>
     <ul>
       <li>$0–$18,200 — 0%</li>
-      <li>$18,201–$45,000 — 19%</li>
-      <li>$45,001–$120,000 — 32.5%</li>
-      <li>$120,001–$180,000 — 37%</li>
-      <li>$180,001+ — 45%</li>
+      <li>$18,201–$45,000 — 15%</li>
+      <li>$45,001–$135,000 — 30%</li>
+      <li>$135,001–$190,000 — 37%</li>
+      <li>$190,001+ — 45%</li>
     </ul>
-    <p style="margin-top:8px">LITO max $700 · Medicare 2%</p>
+    <p style="margin-top:8px">LITO max $700 · Medicare levy shown here is a simplified estimate.</p>
   </div>
 
 </div>
@@ -51,23 +51,23 @@
 <section class="tool-info-section" aria-label="Tool information">
   <div class="tool-info-panel">
     <h2>About this tool</h2>
-    <p>ATO-aligned FY2026-27 tax calculator including LITO offset and Medicare levy. This tool gives a general estimate to help with everyday planning — for anything with real financial consequences, it's worth confirming the numbers with a professional.</p>
+    <p>Estimate Australian resident income tax for FY2026-27 using the legislated resident tax rates and the Low Income Tax Offset. The Medicare levy component is simplified because reductions, exemptions and family thresholds depend on circumstances not collected by this calculator.</p>
   </div>
   <div class="tool-info-panel">
     <h2>How to use it</h2>
     <ol>
-      <li>Fill in the amounts and rates relevant to your situation.</li>
-      <li>Adjust the term, frequency or scenario fields to match your circumstances.</li>
-      <li>Hit calculate to see the full breakdown, not just a single figure.</li>
-      <li>Try a few different scenarios side by side before making a decision.</li>
+      <li>Enter your annual gross income.</li>
+      <li>Add eligible deductions and any relevant deductible personal super contribution you want included in this estimate.</li>
+      <li>Calculate to see estimated taxable income, income tax, LITO, Medicare estimate and take-home amounts.</li>
+      <li>Use the result for general planning and confirm your actual liability with the ATO or a registered tax agent.</li>
     </ol>
   </div>
   <div class="tool-info-panel">
     <h2>Common use cases</h2>
     <ul>
-      <li>Comparing a few different offers or rates before committing.</li>
-      <li>Working out whether a purchase or loan fits your budget.</li>
-      <li>Checking your own numbers against what a provider has quoted you.</li>
+      <li>Estimating take-home income when comparing salary offers.</li>
+      <li>Testing the effect of legitimate work-related deductions on taxable income.</li>
+      <li>Creating a rough household budget before tax time.</li>
     </ul>
   </div>
 </section>
@@ -78,8 +78,8 @@
   <a href="/superannuation-calculator" class="related-card">🏦 Superannuation</a>
 </div></div>
 <div class="faq-section"><h2>Frequently Asked Questions</h2>
-  <div class="faq-item"><button class="faq-question">What is LITO? <span class="faq-chevron">▼</span></button><div class="faq-answer"><p>Low Income Tax Offset reduces tax for those earning under $66,667. Maximum offset is $700 for incomes up to $37,500.</p></div></div>
-  <div class="faq-item"><button class="faq-question">Is Medicare included? <span class="faq-chevron">▼</span></button><div class="faq-answer"><p>Yes — the Medicare Levy of 2% is included in the calculation. Low-income earners below $26,000 are exempt.</p></div></div>
+  <div class="faq-item"><button class="faq-question">What is LITO? <span class="faq-chevron">▼</span></button><div class="faq-answer"><p>The Low Income Tax Offset can reduce income tax for eligible lower-income Australian residents. The maximum offset is $700, with the amount reducing as taxable income increases.</p></div></div>
+  <div class="faq-item"><button class="faq-question">Is Medicare included? <span class="faq-chevron">▼</span></button><div class="faq-answer"><p>A simplified Medicare levy estimate is included. The actual levy can be reduced or exempt depending on taxable income, family income, dependants, SAPTO eligibility and other circumstances, so confirm the final amount with the ATO.</p></div></div>
 </div>
 </div></div>
 <script>
@@ -107,9 +107,9 @@ function calcATX(){
     '<div class="result-item"><div class="result-item-label">Taxable Income</div><div class="result-item-value">$'+fmt(taxable)+'</div></div>'+
     '<div class="result-item"><div class="result-item-label">Income Tax</div><div class="result-item-value">$'+fmt(tax)+'</div></div>'+
     '<div class="result-item"><div class="result-item-label">LITO Applied</div><div class="result-item-value">$'+fmt(lito)+'</div></div>'+
-    '<div class="result-item"><div class="result-item-label">Medicare Levy</div><div class="result-item-value">$'+fmt(med)+'</div></div>'+
-    '<div class="result-item"><div class="result-item-label">Total Tax</div><div class="result-item-value">$'+fmt(total)+'</div></div>'+
-    '<div class="result-item"><div class="result-item-label">Effective Rate</div><div class="result-item-value">'+(total/gross*100).toFixed(1)+'%</div></div>'+
+    '<div class="result-item"><div class="result-item-label">Medicare Estimate</div><div class="result-item-value">$'+fmt(med)+'</div></div>'+
+    '<div class="result-item"><div class="result-item-label">Estimated Total</div><div class="result-item-value">$'+fmt(total)+'</div></div>'+
+    '<div class="result-item"><div class="result-item-label">Effective Rate</div><div class="result-item-value">'+(gross>0?(total/gross*100).toFixed(1):'0.0')+'%</div></div>'+
     '<div class="result-item"><div class="result-item-label">Weekly Take-Home</div><div class="result-item-value">$'+fmt(takehome/52)+'</div></div>'+
     '<div class="result-item"><div class="result-item-label">Fortnightly</div><div class="result-item-value">$'+fmt(takehome/26)+'</div></div>';
 }
@@ -117,24 +117,23 @@ function calcATX(){
 
 <section class="static-content-section container" data-static-seo="true">
   <h2>About this calculator</h2>
-  <p>Calculate your Australian income tax, Medicare levy, LITO offset and take-home pay for FY2026-27. ATO-aligned calculator. The Australian Tax Calculator page explains what the tool or support page provides, what information is needed and how to use the result or guidance for an everyday task.</p>
-  <p>Use Australian Tax Calculator when you need a quick answer without creating an account, downloading an app or sending your information to a third party. The tool is designed for everyday planning, comparison and checking, with results shown in the browser as soon as you enter the details.</p>
+  <p>This calculator provides a general FY2026-27 Australian resident income tax estimate using the legislated resident tax brackets and LITO rules encoded in the tool. It also shows a simplified Medicare levy estimate, which should not be treated as a final Medicare assessment.</p>
+  <p>Use the calculator for rough take-home-pay and budgeting scenarios. It does not collect enough information to account for every tax offset, Medicare reduction or exemption, surcharge, study-loan obligation, residency issue or personal circumstance.</p>
 
   <h2>How to use Australian Tax Calculator</h2>
   <ol>
-    <li>Enter the dates, numbers or options requested by the form on this page.</li>
-    <li>Choose any unit, country, time period or setting that applies to your situation.</li>
-    <li>Press the calculate or generate button to show the result.</li>
-    <li>Review the explanation beside the result before relying on it for planning.</li>
+    <li>Enter gross annual income and any deductions you reasonably expect to claim.</li>
+    <li>Add deductible personal super contributions only where they are relevant to your situation.</li>
+    <li>Press calculate to see the estimated tax and take-home breakdown.</li>
+    <li>Confirm important tax decisions with current ATO guidance or a registered tax agent.</li>
   </ol>
 
   <h2>When this page is useful</h2>
-  <p>Australian Tax Calculator is useful for quick checks, household planning, school or work tasks, content planning and comparing simple scenarios. Many visitors use these tools to avoid manual counting or spreadsheet setup for a one-off question.</p>
-  <p>The result should be treated as a practical guide rather than professional advice. For legal, financial, health, tax, pregnancy, school holiday, tide or public holiday decisions, confirm important details with an official source or qualified professional.</p>
+  <p>It can help with salary comparisons, household budgeting and quick tax scenarios where an approximate result is useful before obtaining formal tax advice.</p>
 
   <h2>Privacy and accuracy</h2>
-  <p>MyCalcTools tools run in your browser wherever possible. We aim to keep pages clear, lightweight and easy to read on mobile, tablet and desktop. If a page uses dates, public holidays or calendar rules, those rules can change over time, so checking the final result against the relevant authority is recommended for high-stakes decisions.</p>
-  <p>Canonical URL: <a href="/australian-tax-calculator">https://mycalctools.net/australian-tax-calculator.html</a></p>
+  <p>The calculation runs in your browser. Tax law and thresholds can change, and individual circumstances can materially affect the final result. This calculator is a planning aid, not a tax return or professional tax advice.</p>
+  <p>Canonical URL: <a href="/australian-tax-calculator">https://mycalctools.net/australian-tax-calculator</a></p>
 </section>
 <footer id="static-policy-footer" style="background:#050914;border-top:1px solid rgba(0,229,255,0.08);padding:24px;text-align:center;font-size:0.8rem;color:#8b93b0">
   <nav aria-label="Policy links">
