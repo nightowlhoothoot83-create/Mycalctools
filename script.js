@@ -63,7 +63,7 @@ function renderBrandStrip() {
     <div class="rs-brand-strip">
       <div class="rs-brand-left">
         <a href="https://raven-sharp.com" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:10px;text-decoration:none">
-          <img src="/raven-sharp.jpg" alt="Raven Sharp" style="width:32px;height:32px;border-radius:8px;object-fit:cover;filter:drop-shadow(0 0 6px rgba(6,100,255,0.5))">
+          <img src="/assets/perf/raven-sharp.webp" alt="Raven Sharp" width="32" height="32" decoding="async" style="width:32px;height:32px;border-radius:8px;object-fit:cover;filter:drop-shadow(0 0 6px rgba(6,100,255,0.5))">
           <span style="font-weight:700;font-size:0.9rem;color:var(--text,#e8eaf6);letter-spacing:0.02em">Raven Sharp <span style="color:var(--muted,#94a3b8);font-weight:400">Tools</span></span>
         </a>
       </div>
@@ -122,7 +122,7 @@ function renderFooter() {
         <div class="footer-grid">
           <div class="footer-brand">
             <a href="/" class="nav-logo">
-              <img src="/mycalctools-logo.png" alt="MyCalcTools logo" class="nav-logo-icon">
+              <img src="/assets/perf/mycalctools-logo.webp" alt="MyCalcTools logo" class="nav-logo-icon" width="36" height="36" loading="lazy" decoding="async">
           <span class="nav-logo-text">MyCalcTools</span>
             </a>
             <p>Free online calculators for everyday life. No accounts, no noise. Just answers.</p>
@@ -138,7 +138,7 @@ function renderFooter() {
             </div>
           </div>
           <div class="footer-col">
-            <h4>Health & Body</h4>
+            <h3>Health & Body</h3>
             <ul>
               <li><a href="/bmi-calculator">BMI Calculator</a></li>
               <li><a href="/calorie-calculator">Calorie Calculator</a></li>
@@ -149,7 +149,7 @@ function renderFooter() {
             </ul>
           </div>
           <div class="footer-col">
-            <h4>Finance</h4>
+            <h3>Finance</h3>
             <ul>
               <li><a href="/loan-calculator">Loan Calculator</a></li>
               <li><a href="/mortgage-calculator">Mortgage</a></li>
@@ -160,7 +160,7 @@ function renderFooter() {
             </ul>
           </div>
           <div class="footer-col">
-            <h4>Info</h4>
+            <h3>Info</h3>
             <ul>
               <li><a href="/converters/">🔄 Converters</a>
       <a href="/about">About</a></li>
@@ -191,19 +191,19 @@ function renderFooter() {
 function renderGroupFooter() {
   document.getElementById('group-footer').innerHTML = `
     <div class="rs-footer">
-      <img src="/ascension-digital-logo.jpg" alt="Ascension Digital" class="ascension-logo">
+      <img src="/assets/perf/ascension-digital-logo.webp" alt="Ascension Digital" class="ascension-logo" loading="lazy" decoding="async" width="315" height="129">
       <h3>Part of the Ascension Digital Group</h3>
       <p class="rs-footer-tagline">Elevating Your Digital Future</p>
       <div class="rs-footer-links">
-        <a href="/" title="MyCalcTools"><img src="/mycalctools-logo.png" alt="MyCalcTools" class="rs-footer-brand-icon"></a>
-        <a href="https://www.mycalendartools.net" target="_blank" rel="noopener" title="MyCalendarTools"><img src="/mycalendartools-logo.png" alt="MyCalendarTools" class="rs-footer-brand-icon"></a>
-        <a href="https://www.wheelnamepicker.com.au" target="_blank" rel="noopener" title="WheelNamePicker"><img src="/wheelnamepicker-logo.png" alt="WheelNamePicker" class="rs-footer-brand-icon"></a>
-        <a href="https://zyia-creations.printify.me/" target="_blank" rel="noopener" title="Zyia Creations"><img src="/zyia-creations.png" alt="Zyia Creations" class="rs-footer-brand-icon"></a>
-        <a href="https://zyiacreations.etsy.com" target="_blank" rel="noopener" title="ADG Downloads"><img src="/adg-downloads.png" alt="ADG Downloads" class="rs-footer-brand-icon"></a>
-        <a href="https://www.facebook.com/share/18Ma3KsJTo/" target="_blank" rel="noopener" title="Feed the Feed"><img src="/feed-the-feed.jpg" alt="Feed the Feed" class="rs-footer-brand-icon"></a>
-        <a href="http://www.youtube.com/@spewcrewkids" target="_blank" rel="noopener" title="Spew Crew Kids"><img src="/spew-crew.png" alt="Spew Crew Kids" class="rs-footer-brand-icon" style="background:#000;border-radius:8px"></a>
-        <a href="https://mysticalmoments.pages.dev" target="_blank" rel="noopener" title="Mystical Moments"><img src="/mystical-moments.png" alt="Mystical Moments" class="rs-footer-brand-icon"></a>
-        <a href="https://raven-sharp.com" target="_blank" rel="noopener" title="RavenSharp"><img src="/ravensharp-logo.jpg" alt="RavenSharp" class="rs-footer-brand-icon"></a>
+        <a href="/" title="MyCalcTools"><img src="/assets/perf/mycalctools-logo.webp" alt="MyCalcTools" class="rs-footer-brand-icon" loading="lazy" decoding="async" width="52" height="52"></a>
+        <a href="https://www.mycalendartools.net" target="_blank" rel="noopener" title="MyCalendarTools"><img src="/assets/perf/mycalendartools-logo.webp" alt="MyCalendarTools" class="rs-footer-brand-icon" loading="lazy" decoding="async" width="52" height="52"></a>
+        <a href="https://www.wheelnamepicker.com.au" target="_blank" rel="noopener" title="WheelNamePicker"><img src="/assets/perf/wheelnamepicker-logo.webp" alt="WheelNamePicker" class="rs-footer-brand-icon" loading="lazy" decoding="async" width="52" height="52"></a>
+        <a href="https://zyia-creations.printify.me/" target="_blank" rel="noopener" title="Zyia Creations"><img src="/assets/perf/zyia-creations.webp" alt="Zyia Creations" class="rs-footer-brand-icon" loading="lazy" decoding="async" width="52" height="52"></a>
+        <a href="https://zyiacreations.etsy.com" target="_blank" rel="noopener" title="ADG Downloads"><img src="/assets/perf/adg-downloads.webp" alt="ADG Downloads" class="rs-footer-brand-icon" loading="lazy" decoding="async" width="52" height="52"></a>
+        <a href="https://www.facebook.com/share/18Ma3KsJTo/" target="_blank" rel="noopener" title="Feed the Feed"><img src="/assets/perf/feed-the-feed.webp" alt="Feed the Feed" class="rs-footer-brand-icon" loading="lazy" decoding="async" width="52" height="52"></a>
+        <a href="http://www.youtube.com/@spewcrewkids" target="_blank" rel="noopener" title="Spew Crew Kids"><img src="/assets/perf/spew-crew.webp" alt="Spew Crew Kids" class="rs-footer-brand-icon" style="background:#000;border-radius:8px" loading="lazy" decoding="async" width="52" height="52"></a>
+        <a href="https://mysticalmoments.pages.dev" target="_blank" rel="noopener" title="Mystical Moments"><img src="/assets/perf/mystical-moments.webp" alt="Mystical Moments" class="rs-footer-brand-icon" loading="lazy" decoding="async" width="52" height="52"></a>
+        <a href="https://raven-sharp.com" target="_blank" rel="noopener" title="RavenSharp"><img src="/assets/perf/ravensharp-logo.webp" alt="RavenSharp" class="rs-footer-brand-icon" loading="lazy" decoding="async" width="52" height="52"></a>
 
       </div>
       <a href="/about#support" class="btn-finance" style="margin-top:8px">Support Us</a>
@@ -288,5 +288,5 @@ function renderRavenSharpPromo() {
 }
 
 function renderHostingAffiliate() {
-  return `<div class="affiliate-banner card container"><a href="https://ventraip.com.au/affiliate/uJmhYi4h" target="_blank" rel="sponsored noopener"><img src="/ventraip-affiliate-banner.jpg" alt="VentraIP Australian website hosting affiliate banner"></a></div>`;
+  return `<div class="affiliate-banner card container"><a href="https://ventraip.com.au/affiliate/uJmhYi4h" target="_blank" rel="sponsored noopener"><img src="/assets/perf/ventraip-affiliate-banner.webp" alt="VentraIP Australian website hosting affiliate banner" width="770" height="513" loading="lazy" decoding="async"></a></div>`;
 }
