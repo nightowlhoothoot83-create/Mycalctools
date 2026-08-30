@@ -1,5 +1,5 @@
 /*
-  Cache-Control: no-transform
+  Cache-Control: no-cache, must-revalidate
   X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
@@ -19,11 +19,14 @@
 /*.svg
   Cache-Control: public, max-age=31536000, immutable
 
+/*.webp
+  Cache-Control: public, max-age=3600, must-revalidate
+
 /style.css
-  Cache-Control: public, max-age=604800
+  Cache-Control: no-cache, must-revalidate
 
 /script.js
-  Cache-Control: public, max-age=604800
+  Cache-Control: no-cache, must-revalidate
 
 /cookie-consent.js
-  Cache-Control: public, max-age=604800
+  Cache-Control: no-cache, must-revalidate
