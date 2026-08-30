@@ -1,0 +1,16 @@
+name: Verify final MyCalc shell
+on:
+  push:
+    branches:
+      - repair/final-adsense-visual-mobile-20260830
+  workflow_dispatch:
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify every HTML page shell and branding
+        run: python scripts/verify_final_shell.py
