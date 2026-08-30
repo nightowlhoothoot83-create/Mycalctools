@@ -76,7 +76,7 @@ function renderNav() {
     <nav class="site-nav">
       <div class="nav-inner">
         <a href="/" class="nav-logo">
-          <img src="/mycalctools-logo.png" alt="MyCalcTools logo" class="nav-logo-icon">
+          <img src="/assets/perf/mycalctools-logo.webp" alt="MyCalcTools logo" class="nav-logo-icon" width="36" height="36" decoding="async" fetchpriority="high">
           <span class="nav-logo-text">MyCalcTools</span>
         </a>
         <div class="nav-search">
@@ -281,7 +281,7 @@ document.addEventListener('DOMContentLoaded', initPage);
 
 function renderRavenSharpPromo() {
   return `<div class="soft-promo-card card container">
-    <img src="/ravensharp-logo.jpg" alt="RavenSharp">
+    <img src="/assets/perf/ravensharp-logo.webp" alt="RavenSharp">
     <div><h3>RavenSharp Tools</h3><p>AI-assisted formatting, fixing and file tools from the Ascension Digital Group.</p></div>
     <a class="btn-finance" href="https://raven-sharp.com" target="_blank" rel="noopener">Open RavenSharp</a>
   </div>`;
