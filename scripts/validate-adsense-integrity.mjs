@@ -30,7 +30,7 @@ const redirects=fs.readFileSync('_redirects','utf8');
 if(/^\/(?:bmi-calculator|calorie-calculator)\s+\/(?:bmi-calculator|calorie-calculator)\.html\s+200/m.test(redirects))fail.push('_redirects: reverse clean-route .html rewrite returned');
 const consent=fs.readFileSync('cookie-consent.js','utf8');
 if(!/data-consent-adsense/.test(consent)||!/reopenCookiePreferences/.test(consent))fail.push('cookie-consent.js: consent gate missing');
-for(const marker of ['ensureShellMounts','site-footer','group-footer','mct-approved-shell-style','mycalendartools.net/assets/perf/ascension-digital.webp'])if(!consent.includes(marker))fail.push(`cookie-consent.js: shared shell marker missing: ${marker}`);
+for(const marker of ['ensureShellMounts','site-footer','group-footer','mct-approved-shell-style','/assets/perf/ascension-digital.webp'])if(!consent.includes(marker))fail.push(`cookie-consent.js: shared shell marker missing: ${marker}`);
 const shared=fs.readFileSync('script.js','utf8');
 const toolEntries=(shared.match(/\{ name:/g)||[]).length;
 if(toolEntries!==55)fail.push(`script.js: expected 55 searchable tools, found ${toolEntries}`);

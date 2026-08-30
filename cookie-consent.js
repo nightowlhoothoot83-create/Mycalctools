@@ -150,9 +150,10 @@
   }
 
   function enforceApprovedAdgLogo() {
+    // Presentation guard only. The logo source is owned by script.js so this
+    // bootstrap cannot silently revert a footer-logo change in the browser.
     var logos = document.querySelectorAll('.ascension-logo, img[alt="Ascension Digital"], img[alt="Ascension Digital Group"]');
     logos.forEach(function (img) {
-      img.src = '/assets/perf/ascension-digital.webp';
       img.style.objectFit = 'contain';
       img.style.height = 'auto';
     });

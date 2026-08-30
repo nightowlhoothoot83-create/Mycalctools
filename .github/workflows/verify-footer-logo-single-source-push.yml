@@ -1,0 +1,14 @@
+name: Verify footer logo guard
+on:
+  push:
+    branches:
+      - fix/footer-logo-clean-pr-final
+jobs:
+  verify-footer-logo:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: node scripts/check_footer_logo_single_source.mjs
