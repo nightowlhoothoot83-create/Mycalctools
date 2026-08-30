@@ -152,7 +152,7 @@
   function enforceApprovedAdgLogo() {
     var logos = document.querySelectorAll('.ascension-logo, img[alt="Ascension Digital"], img[alt="Ascension Digital Group"]');
     logos.forEach(function (img) {
-      img.src = 'https://www.mycalendartools.net/assets/perf/ascension-digital.webp';
+      img.src = '/assets/perf/ascension-digital.webp';
       img.style.objectFit = 'contain';
       img.style.height = 'auto';
     });
