@@ -1,0 +1,1 @@
+Footer logo repair: script.js owns the Ascension Digital image source. cookie-consent.js may apply presentation only and must not rewrite the source. The integrity validator protects the local canonical /assets/perf/ascension-digital.webp reference.
