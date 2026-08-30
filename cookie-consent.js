@@ -150,6 +150,7 @@
   }
 
   function enforceApprovedAdgLogo() {
+    // Canonical approved asset: /assets/perf/ascension-digital.webp
     // Presentation guard only. The logo source is owned by script.js so this
     // bootstrap cannot silently revert a footer-logo change in the browser.
     var logos = document.querySelectorAll('.ascension-logo, img[alt="Ascension Digital"], img[alt="Ascension Digital Group"]');
