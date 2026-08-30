@@ -33,12 +33,13 @@ text = style.read_text(encoding='utf-8')
 if MARKER not in text:
     style.write_text(text.rstrip() + CSS + "\n", encoding='utf-8')
 
+APPROVED_LOGO = 'https://www.mycalendartools.net/assets/perf/ascension-digital.webp'
 replacements = {
-    'https://www.mycalendartools.net/assets/perf/ascension-digital.webp': '/assets/perf/ascension-digital-logo.webp',
-    '/ascension-digital-logo.jpg': '/assets/perf/ascension-digital-logo.webp',
-    'ascension-digital-logo.jpg': '/assets/perf/ascension-digital-logo.webp',
-    '/logo-ascension-digital.png': '/assets/perf/ascension-digital-logo.webp',
-    'logo-ascension-digital.png': '/assets/perf/ascension-digital-logo.webp',
+    '/assets/perf/ascension-digital-logo.webp': APPROVED_LOGO,
+    '/ascension-digital-logo.jpg': APPROVED_LOGO,
+    'ascension-digital-logo.jpg': APPROVED_LOGO,
+    '/logo-ascension-digital.png': APPROVED_LOGO,
+    'logo-ascension-digital.png': APPROVED_LOGO,
 }
 
 BOOT = '''\n<script data-adg-shell-bootstrap="true">\ndocument.addEventListener('DOMContentLoaded',function(){if(typeof window.initPage==='function')window.initPage();});\n</script>\n'''
@@ -51,7 +52,6 @@ for p in root.rglob('*.html'):
     for old, rep in replacements.items():
         new = new.replace(old, rep)
 
-    # Every public HTML page must expose the shared header and both footers.
     if '<body' in new.lower():
         lower = new.lower()
         body_end = new.find('>', lower.find('<body')) + 1
@@ -66,7 +66,7 @@ for p in root.rglob('*.html'):
     lower = new.lower()
     footer_bits = ''
     if 'id="site-footer"' not in lower and "id='site-footer'" not in lower:
-        footer_bits += '\n<div id="site-footer"></div>'
+        footer_bits += '\n<footer id="site-footer"></footer>'
     if 'id="group-footer"' not in lower and "id='group-footer'" not in lower:
         footer_bits += '\n<div id="group-footer"></div>'
     if footer_bits and '</body>' in lower:
@@ -84,7 +84,6 @@ for p in root.rglob('*.html'):
     if new != data:
         p.write_text(new, encoding='utf-8')
 
-# Shared JS can also contain legacy logo references.
 for p in root.rglob('*.js'):
     if '.git' in p.parts:
         continue
