@@ -1,0 +1,1 @@
+Final targeted repair metadata. Runtime source ownership remains script.js only.
