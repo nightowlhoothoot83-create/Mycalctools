@@ -1,0 +1,30 @@
+name: Fix footer logo single source
+on:
+  push:
+    branches:
+      - fix/footer-logo-single-source-final
+permissions:
+  contents: write
+jobs:
+  repair:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: fix/footer-logo-single-source-final
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - name: Remove conflicting logo rewriter and align validator
+        run: python scripts/fix_footer_logo_single_source.py
+      - name: Validate integrity
+        run: node scripts/validate-adsense-integrity.mjs
+      - name: Commit repaired files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add cookie-consent.js scripts/validate-adsense-integrity.mjs
+          git diff --cached --quiet && exit 0
+          git commit -m "Fix footer logo source conflict"
+          git push origin HEAD:fix/footer-logo-single-source-final
