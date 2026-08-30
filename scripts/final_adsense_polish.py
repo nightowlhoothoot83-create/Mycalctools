@@ -27,11 +27,24 @@ CSS = r'''
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
 '''
 
+
+def read_preserve(path):
+    raw = path.read_bytes()
+    try:
+        return raw.decode('utf-8'), 'utf-8'
+    except UnicodeDecodeError:
+        return raw.decode('cp1252'), 'cp1252'
+
+
+def write_preserve(path, text, encoding):
+    path.write_bytes(text.encode(encoding))
+
+
 root = Path('.')
 style = root / 'style.css'
-text = style.read_text(encoding='utf-8')
+text, enc = read_preserve(style)
 if MARKER not in text:
-    style.write_text(text.rstrip() + CSS + "\n", encoding='utf-8')
+    write_preserve(style, text.rstrip() + CSS + "\n", enc)
 
 APPROVED_LOGO = 'https://www.mycalendartools.net/assets/perf/ascension-digital.webp'
 replacements = {
@@ -47,7 +60,7 @@ BOOT = '''\n<script data-adg-shell-bootstrap="true">\ndocument.addEventListener(
 for p in root.rglob('*.html'):
     if '.git' in p.parts:
         continue
-    data = p.read_text(encoding='utf-8', errors='ignore')
+    data, enc = read_preserve(p)
     new = data
     for old, rep in replacements.items():
         new = new.replace(old, rep)
@@ -82,14 +95,14 @@ for p in root.rglob('*.html'):
         new = new[:idx] + BOOT + new[idx:]
 
     if new != data:
-        p.write_text(new, encoding='utf-8')
+        write_preserve(p, new, enc)
 
 for p in root.rglob('*.js'):
     if '.git' in p.parts:
         continue
-    data = p.read_text(encoding='utf-8', errors='ignore')
+    data, enc = read_preserve(p)
     new = data
     for old, rep in replacements.items():
         new = new.replace(old, rep)
     if new != data:
-        p.write_text(new, encoding='utf-8')
+        write_preserve(p, new, enc)
