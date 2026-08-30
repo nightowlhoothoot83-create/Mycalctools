@@ -191,7 +191,7 @@ function renderFooter() {
 function renderGroupFooter() {
   document.getElementById('group-footer').innerHTML = `
     <div class="rs-footer">
-      <img src="https://www.mycalendartools.net/assets/perf/ascension-digital.webp" alt="Ascension Digital" class="ascension-logo" loading="lazy" decoding="async" width="315" height="129">
+      <img src="https://www.mycalendartools.net/assets/perf/ascension-digital.webp" alt="Ascension Digital" class="ascension-logo" width="440" height="440" loading="lazy" decoding="async" style="width:220px;height:auto;border-radius:12px;margin:0 auto 20px;display:block;filter:drop-shadow(0 0 16px rgba(6,214,255,0.3))">
       <h3>Part of the Ascension Digital Group</h3>
       <p class="rs-footer-tagline">Elevating Your Digital Future</p>
       <div class="rs-footer-links">
