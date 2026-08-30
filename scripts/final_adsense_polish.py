@@ -33,7 +33,6 @@ text = style.read_text(encoding='utf-8')
 if MARKER not in text:
     style.write_text(text.rstrip() + CSS + "\n", encoding='utf-8')
 
-# Use the local optimized current ADG logo everywhere instead of legacy/cross-site assets.
 replacements = {
     'https://www.mycalendartools.net/assets/perf/ascension-digital.webp': '/assets/perf/ascension-digital-logo.webp',
     '/ascension-digital-logo.jpg': '/assets/perf/ascension-digital-logo.webp',
@@ -41,8 +40,53 @@ replacements = {
     '/logo-ascension-digital.png': '/assets/perf/ascension-digital-logo.webp',
     'logo-ascension-digital.png': '/assets/perf/ascension-digital-logo.webp',
 }
-for p in root.rglob('*'):
-    if not p.is_file() or p.suffix.lower() not in {'.html','.js','.css'} or '.git' in p.parts:
+
+BOOT = '''\n<script data-adg-shell-bootstrap="true">\ndocument.addEventListener('DOMContentLoaded',function(){if(typeof window.initPage==='function')window.initPage();});\n</script>\n'''
+
+for p in root.rglob('*.html'):
+    if '.git' in p.parts:
+        continue
+    data = p.read_text(encoding='utf-8', errors='ignore')
+    new = data
+    for old, rep in replacements.items():
+        new = new.replace(old, rep)
+
+    # Every public HTML page must expose the shared header and both footers.
+    if '<body' in new.lower():
+        lower = new.lower()
+        body_end = new.find('>', lower.find('<body')) + 1
+        top = ''
+        if 'id="brand-strip"' not in lower and "id='brand-strip'" not in lower:
+            top += '\n<div id="brand-strip"></div>'
+        if 'id="nav"' not in lower and "id='nav'" not in lower:
+            top += '\n<div id="nav"></div>'
+        if top:
+            new = new[:body_end] + top + new[body_end:]
+
+    lower = new.lower()
+    footer_bits = ''
+    if 'id="site-footer"' not in lower and "id='site-footer'" not in lower:
+        footer_bits += '\n<div id="site-footer"></div>'
+    if 'id="group-footer"' not in lower and "id='group-footer'" not in lower:
+        footer_bits += '\n<div id="group-footer"></div>'
+    if footer_bits and '</body>' in lower:
+        idx = lower.rfind('</body>')
+        new = new[:idx] + footer_bits + new[idx:]
+
+    lower = new.lower()
+    if '/script.js' not in lower and '</body>' in lower:
+        idx = lower.rfind('</body>')
+        new = new[:idx] + '\n<script src="/script.js"></script>\n' + BOOT + new[idx:]
+    elif 'initpage()' not in lower and 'data-adg-shell-bootstrap' not in lower and '</body>' in lower:
+        idx = lower.rfind('</body>')
+        new = new[:idx] + BOOT + new[idx:]
+
+    if new != data:
+        p.write_text(new, encoding='utf-8')
+
+# Shared JS can also contain legacy logo references.
+for p in root.rglob('*.js'):
+    if '.git' in p.parts:
         continue
     data = p.read_text(encoding='utf-8', errors='ignore')
     new = data
