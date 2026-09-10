@@ -69,6 +69,8 @@ else{
   for(const file of genericFiles){const slug=file.replace(/\.html$/,'').replace(/\\/g,'/');if(!info[slug]||!how[slug])fail.push(`${file}: generic fallback exists without a server-side unique replacement`)}
 }
 const bmi=fs.readFileSync('bmi-calculator.html','utf8');
+const homeHtml=fs.readFileSync('index.html','utf8');
+if(!/@media\s*\(max-width:380px\)\{\.footer-grid\{grid-template-columns:1fr\}\}/.test(homeHtml))fail.push('index.html: narrow-mobile footer containment rule missing');
 for(const marker of ['data-adg-enrichment="true"','How BMI is calculated','BMI range guide','Worked BMI example','role="img"'])if(!bmi.includes(marker))fail.push(`bmi-calculator.html: missing enrichment marker ${marker}`);
 if(/dates, numbers or options|household planning, school or work tasks/i.test(bmi))fail.push('bmi-calculator.html: generic template copy remains');
 const mulch=fs.readFileSync('mulch-coverage-cost-calculator.html','utf8');
