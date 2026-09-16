@@ -67,7 +67,6 @@ function pageIntro(html){
 function infoSection(html,path){
  const d=INFO[key(path)];if(!d)return null;const intro=pageIntro(html);
  return `<section class="tool-info-section" aria-label="${esc(intro.title)} information" data-adg-unique-info="true">
- <div class="tool-info-panel"><h2>What this tool calculates</h2><p>${esc(intro.summary)}</p></div>
  <div class="tool-info-panel"><h2>How to use this calculator</h2><p>${esc(HOW[key(path)])}</p></div>
  <div class="tool-info-panel"><h2>Useful real-world examples</h2><ul>${d.use.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div>
  <div class="tool-info-panel"><h2>Important detail</h2><p>${esc(d.note)}</p></div>
