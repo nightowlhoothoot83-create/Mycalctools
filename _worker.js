@@ -16,9 +16,9 @@ const HOW={
 "insurance-calculator":"Enter the household, income, debt and cover details requested, then calculate a starting estimate before comparing formal insurance quotes.",
 "rent-calculator":"Enter take-home income and the rent amount with their frequencies, then calculate the income share used by rent and the rental-stress guide.",
 "electricity-calculator":"Enter appliance wattage, daily running time and electricity tariff, then calculate the daily, monthly and annual running-cost estimates.",
-"australian-tax-calculator":"Enter Australian taxable income and applicable deductions or study-debt details, then calculate the estimated tax and net income breakdown.",
+"australian-tax-calculator":"Enter annual gross income, work-related deductions and any deductible personal super contribution you want included, then calculate the estimated tax and take-home breakdown.",
 "bas-gst-calculator":"Enter GST-inclusive sales and business purchases for the BAS period, then calculate GST collected, input credits and estimated net GST payable.",
-"hecs-help-calculator":"Enter annual repayment income and select the relevant financial year, then calculate the estimated compulsory HELP repayment and remaining take-home amount.",
+"hecs-help-calculator":"Enter your current HECS-HELP debt balance and annual repayment income, then calculate the estimated compulsory repayment, weekly equivalent and simple payoff timeframe.",
 "superannuation-calculator":"Enter the current balance, age, salary, contribution rate and assumed return, then calculate the projected retirement balance and compare contribution scenarios.",
 "cost-of-living-calculator":"Enter household income and each regular expense category using the same time period, then calculate the surplus or shortfall and adjust individual costs to test a budget.",
 "airfryer-calculator":"Enter the oven temperature and cooking time from the original recipe, then calculate the suggested air-fryer temperature and earlier check time.",
@@ -31,7 +31,7 @@ const HOW={
 "fuel-cost-calculator":"Enter trip distance, vehicle fuel consumption and fuel price, choose matching units, then calculate total fuel required and estimated trip cost.",
 "tip-calculator":"Enter the bill total, choose or enter the tip percentage and number of people, then calculate the tip, final bill and per-person share.",
 "screen-time-calculator":"Add the time spent on each device or activity, then calculate the daily total and compare different days rather than relying on one unusual day.",
-"concrete-calculator":"Choose the slab, footing or post-hole shape, enter all dimensions in matching units and add a waste allowance, then calculate volume and premix bags.",
+"concrete-calculator":"Choose slab or strip footing, or a round post hole, enter the dimensions in metres and the number of post holes if relevant, then calculate volume and approximate premix bag counts.",
 "percentage-calculator":"Select the percentage question that matches the task, enter the two required values, then calculate and read the labelled result rather than swapping the inputs.",
 "scientific-calculator":"Choose degrees or radians where relevant, enter the expression with brackets for the intended order, then calculate and check the displayed history before reusing a result.",
 "etsy-calculator":"Enter the selling price, product and shipping costs plus applicable marketplace charges, then calculate net profit and margin before testing another price.",
@@ -67,7 +67,6 @@ function pageIntro(html){
 function infoSection(html,path){
  const d=INFO[key(path)];if(!d)return null;const intro=pageIntro(html);
  return `<section class="tool-info-section" aria-label="${esc(intro.title)} information" data-adg-unique-info="true">
- <div class="tool-info-panel"><h2>What this tool calculates</h2><p>${esc(intro.summary)}</p></div>
  <div class="tool-info-panel"><h2>How to use this calculator</h2><p>${esc(HOW[key(path)])}</p></div>
  <div class="tool-info-panel"><h2>Useful real-world examples</h2><ul>${d.use.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div>
  <div class="tool-info-panel"><h2>Important detail</h2><p>${esc(d.note)}</p></div>
