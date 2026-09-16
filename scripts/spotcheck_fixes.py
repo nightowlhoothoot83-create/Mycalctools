@@ -12,9 +12,10 @@ replacements = {
     '"concrete-calculator":"Choose slab or strip footing, or a round post hole, enter the dimensions in metres and the number of post holes if relevant, then calculate volume and approximate premix bag counts.",'
 }
 for old, new in replacements.items():
-    if old not in text:
-        raise SystemExit(f'Missing expected worker text: {old[:80]}')
-    text = text.replace(old, new)
+    if old in text:
+        text = text.replace(old, new)
+    elif new not in text:
+        raise SystemExit(f'Could not locate worker instruction: {old[:80]}')
 worker.write_text(text, encoding='utf-8')
 
 # Add the five converter links that were missing from a sitemap claiming all 55 tools.
@@ -35,16 +36,15 @@ if converter_block not in text:
     text = text.replace(marker, converter_block + marker)
 sitemap.write_text(text, encoding='utf-8')
 
-# Correct Concrete copy: the current calculator does not have a waste-allowance input.
+# Make the concrete cost assumption explicit. The calculator code uses m3 * 250.
 concrete = Path('concrete-calculator.html')
 text = concrete.read_text(encoding='utf-8')
-old1 = 'Concrete is ordered by volume, so the calculator converts the dimensions of the selected slab, footing or hole into cubic metres and then applies the waste allowance you choose. For a simple rectangular slab the core calculation is length × width × thickness, after converting all dimensions to consistent units.'
-new1 = 'Concrete is ordered by volume, so the calculator converts the dimensions of the selected slab, strip footing or round post hole into cubic metres and then shows approximate premix bag counts from that volume. For a simple rectangular slab or strip footing the core calculation is length × width × depth. Round post holes use the cylinder-volume formula.'
-old2 = 'Excavations are rarely perfectly square, ground levels vary and some concrete remains in chutes, pumps or tools. A modest allowance can prevent a pour from finishing short, but the right margin depends on the site and job. Measure the actual excavation in several places if dimensions vary. For structural slabs, footings or engineered work, use the dimensions and concrete specification on the approved drawings and confirm the order quantity with the builder, engineer or concrete supplier before the pour.'
-new2 = 'Excavations are rarely perfectly square, ground levels vary and some concrete remains in chutes, pumps or tools. This calculator does not automatically add a waste allowance, so treat the raw volume and bag count as a starting estimate. The displayed dollar figure also uses a simple $250 per cubic metre planning assumption and may differ substantially from local supplier quotes. For structural slabs, footings or engineered work, use the dimensions and concrete specification on the approved drawings and confirm the final order quantity with the builder, engineer or concrete supplier before the pour.'
-if old1 not in text or old2 not in text:
-    raise SystemExit('Expected Concrete explanatory text not found')
-text = text.replace(old1, new1).replace(old2, new2)
+old = 'The cost figure is only a rough comparison based on a simple per-cubic-metre allowance, not a supplier quote.'
+new = 'The cost figure is only a rough comparison using a $250 per cubic metre planning allowance, not a supplier quote.'
+if old in text:
+    text = text.replace(old, new)
+elif new not in text:
+    raise SystemExit('Concrete cost-assumption copy not found')
 concrete.write_text(text, encoding='utf-8')
 
 print('Applied final spot-check fixes')
