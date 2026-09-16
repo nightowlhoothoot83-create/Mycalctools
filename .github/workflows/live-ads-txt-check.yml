@@ -1,0 +1,32 @@
+name: Live ads.txt check
+on:
+  push:
+    branches: [ops/ads-txt-live-check-20260917]
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check all AdSense ads.txt endpoints
+        shell: bash
+        run: |
+          set -u
+          for url in \
+            https://mycalctools.net/ads.txt \
+            https://mycalendartools.net/ads.txt \
+            https://wheelnamepicker.com.au/ads.txt
+          do
+            echo "===== $url ====="
+            body="$(mktemp)"
+            curl -sS -L --max-time 20 -o "$body" -w 'HTTP=%{http_code} FINAL=%{url_effective} TYPE=%{content_type}\n' "$url" || true
+            echo "BODY:"
+            cat "$body" 2>/dev/null || true
+            echo
+            if grep -Fq 'google.com, pub-1904958390525375, DIRECT, f08c47fec0942fa0' "$body"; then
+              echo 'PUBLISHER_LINE=OK'
+            else
+              echo 'PUBLISHER_LINE=MISSING'
+            fi
+            echo
+          done
