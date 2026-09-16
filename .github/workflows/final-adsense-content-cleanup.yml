@@ -1,8 +1,5 @@
 name: Final AdSense content cleanup
 on:
-  push:
-    branches:
-      - repair/final-adsense-content-20260916
   workflow_dispatch:
 permissions:
   contents: write
