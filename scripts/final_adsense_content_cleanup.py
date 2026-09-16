@@ -21,12 +21,14 @@ for path in ROOT.rglob('*.html'):
     text = text.replace('&copy; 2025 MyCalcTools', '&copy; 2026 MyCalcTools')
     text = text.replace('© 2025 MyCalcTools', '© 2026 MyCalcTools')
 
+    # Remove the stale year label anywhere it appears, including the homepage card.
+    text = text.replace('Etsy Fees 2024', 'Fee Estimate')
+
     if path.name == 'etsy-calculator.html':
         text = text.replace(
             'Calculate Etsy fees, net profit and profit margin for any listing. Updated for 2024 Etsy fee structure.',
             'Estimate marketplace fees, net profit and profit margin for a product listing. Fee settings are simplified and should be checked against the platform before relying on the result.'
         )
-        text = text.replace('Etsy Fees 2024', 'Fee Estimate')
         text = text.replace(
             '<option value="etsy">Etsy (6.5% + $0.20 listing)</option>',
             '<option value="etsy">Etsy estimate (transaction + listing + payment fees)</option>'
@@ -47,6 +49,20 @@ for path in ROOT.rglob('*.html'):
         path.write_text(text, encoding='utf-8')
         changed.append(str(path))
 
-print(f'Updated {len(changed)} HTML files')
+# The Pages worker creates the served tool-info section. The first panel repeated
+# the same summary already shown immediately above the calculator, so remove that
+# duplicate from the rendered response rather than asking Google to crawl it twice.
+worker_path = ROOT / '_worker.js'
+worker = worker_path.read_text(encoding='utf-8')
+worker_original = worker
+worker = worker.replace(
+    ' <div class="tool-info-panel"><h2>What this tool calculates</h2><p>${esc(intro.summary)}</p></div>\n',
+    ''
+)
+if worker != worker_original:
+    worker_path.write_text(worker, encoding='utf-8')
+    changed.append(str(worker_path))
+
+print(f'Updated {len(changed)} files')
 for item in changed:
     print(item)
