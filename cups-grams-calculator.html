@@ -23,6 +23,13 @@
     </ul>
   </div>
 </section><div class="related-section"><h2>Related Tools</h2><div class="related-grid"><a href="/recipe-scaling-calculator" class="related-card">x Recipe Scaling Calculator</a><a href="/converters/volume-converter" class="related-card">Volume Converter</a></div></div></div></div><script>var cg='cups';function cgMode(m){cg=m;document.getElementById('cgCBtn').className='toggle-btn'+(m==='cups'?' active':'');document.getElementById('cgGBtn').className='toggle-btn'+(m==='grams'?' active':'');document.getElementById('cgLabel').textContent=m==='cups'?'Cups':'Grams';}function calcCupsGrams(){var dens=parseFloat(document.getElementById('cgIngredient').value)||0;var a=parseFloat(document.getElementById('cgAmount').value)||0;var r=cg==='cups'?a*dens:a/dens;document.getElementById('cgR').className='result-box kitchen visible';document.getElementById('cgVal').textContent=cg==='cups'?(Math.round(r)+' g'):(Math.round(r*100)/100+' cups');document.getElementById('cgResultLabel').textContent=cg==='cups'?'estimated weight':'estimated volume';document.getElementById('cgGrid').innerHTML='<div class="result-item"><div class="result-item-label">Reference</div><div class="result-item-value">1 cup = '+dens+' g</div></div><div class="result-item"><div class="result-item-label">Input</div><div class="result-item-value">'+a+' '+(cg==='cups'?'cups':'g')+'</div></div>';}</script>
+
+<section class="static-content-section container" data-adg-source-depth="true">
+<h2>Why cups and grams need an ingredient</h2>
+<p>A cup is a volume measurement while a gram is a mass measurement. The same cup volume can hold very different weights of flour, sugar, butter, cocoa or another ingredient because their densities differ. That is why this converter asks what ingredient you are measuring instead of using one universal cups-to-grams factor.</p>
+<h2>Expect small recipe differences</h2>
+<p>Published cup standards and the way an ingredient is packed can vary. Scooped and compressed flour, for example, may weigh more than flour lightly spooned into a cup. Use a kitchen scale when precision matters, especially for baking, and treat density-based conversions as practical approximations. If a recipe author supplies both volume and weight, their stated gram amount is usually the better reference for that particular recipe.</p>
+</section>
 <footer id="static-policy-footer" style="background:#050914;border-top:1px solid rgba(0,229,255,0.08);padding:24px;text-align:center;font-size:0.8rem;color:#8b93b0">
   <nav aria-label="Policy links">
     <a href="/privacy" style="color:#8b93b0;margin:0 10px;text-decoration:underline">Privacy Policy</a>

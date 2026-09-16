@@ -23,6 +23,13 @@
     </ul>
   </div>
 </section><div class="related-section"><h2>Related Tools</h2><div class="related-grid"><a href="/recipe-scaling-calculator" class="related-card">x Recipe Scaling Calculator</a><a href="/cups-grams-calculator" class="related-card">g Cups to Grams Converter</a></div></div></div></div><script>function panArea(v){var p=v.split(',');var type=p[0],a=parseFloat(p[1]),b=parseFloat(p[2]);return type==='round'?Math.PI*Math.pow(a/2,2):a*b;}function calcPan(){var oldA=panArea(document.getElementById('panOld').value);var newA=panArea(document.getElementById('panNew').value);var f=newA/oldA;document.getElementById('panR').className='result-box kitchen visible';document.getElementById('panVal').textContent=(Math.round(f*100)/100)+'x';document.getElementById('panGrid').innerHTML='<div class="result-item"><div class="result-item-label">Original area</div><div class="result-item-value">'+Math.round(oldA)+' sq cm</div></div><div class="result-item"><div class="result-item-label">New area</div><div class="result-item-value">'+Math.round(newA)+' sq cm</div></div><div class="result-item" style="grid-column:1/-1"><div class="result-item-label">Guidance</div><div class="result-item-value" style="font-size:0.82rem;color:var(--muted)">Multiply ingredients by this factor. A thinner bake may cook faster; a deeper bake may need longer.</div></div>';}</script>
+
+<section class="static-content-section container" data-adg-source-depth="true">
+<h2>Why pan area is the useful comparison</h2>
+<p>This converter compares the surface area of the original pan with the surface area of the replacement pan. The resulting ratio tells you approximately how much batter or mixture is needed to keep a similar depth. It also helps when moving between round, square and rectangular pans where simply comparing widths is misleading.</p>
+<h2>Depth and bake time still need judgement</h2>
+<p>Two pans can have similar surface area but different wall height, material or heat conduction. A deeper layer of batter can take longer to bake and may need a lower temperature to cook evenly; a shallower layer may finish sooner. Leave enough headroom for cakes that rise, and avoid overfilling a pan just because the area calculation says the volume is close. Use the multiplier for ingredient planning and check doneness earlier when the final batter depth differs from the original recipe.</p>
+</section>
 <footer id="static-policy-footer" style="background:#050914;border-top:1px solid rgba(0,229,255,0.08);padding:24px;text-align:center;font-size:0.8rem;color:#8b93b0">
   <nav aria-label="Policy links">
     <a href="/privacy" style="color:#8b93b0;margin:0 10px;text-decoration:underline">Privacy Policy</a>
