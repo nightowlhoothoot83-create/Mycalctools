@@ -1,0 +1,17 @@
+name: Solar calculator unit checks
+on:
+  pull_request:
+    paths: ['solar-calculator.html', 'tests/solar-units.cjs', '.github/workflows/solar-units.yml']
+  push:
+    branches: ['repair/solar-panel-units-20261113']
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node --test tests/solar-units.cjs
