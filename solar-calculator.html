@@ -99,7 +99,7 @@
     var sun=parseFloat(document.getElementById('solState').value);
     var days=parseFloat(document.getElementById('solDays').value)||2;
     var v=parseFloat(document.getElementById('solV').value);
-    var panels=Math.ceil(kwh/sun*1.25);
+    var panels=Math.ceil((kwh/sun*1.25)/0.3);
     var ah=Math.ceil(kwh*1000*days/v/0.8);
     var cost=panels*300+ah*v*0.5;
     document.getElementById('solR').className='result-box eco visible';
