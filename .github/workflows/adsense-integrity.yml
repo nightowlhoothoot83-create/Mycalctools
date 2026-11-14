@@ -12,3 +12,4 @@ jobs:
         with:
           node-version: 20
       - run: node scripts/validate-adsense-integrity.mjs
+      - run: node tests/craft-fair-profit.cjs
