@@ -1,0 +1,26 @@
+{
+  "campaign_id": "mycalctools-craft-fair-20261114",
+  "audience": "Independent makers comparing craft fairs and markets",
+  "destination": "https://mycalctools.net/craft-fair-profit-calculator?utm_source=pinterest&utm_medium=organic_social&utm_campaign=craft_fair_planning",
+  "publication_status": "not_published",
+  "publication_id": null,
+  "published_url": null,
+  "confirmed_at": null,
+  "pinterest": {
+    "title": "Craft fair profit calculator: does your next market pay for your time?",
+    "description": "A busy stall is only part of the picture. Compare stall fees, materials, payment fees and your time in this free craft fair profit calculator. Save several market scenarios on your device, then export a CSV. No account needed. Created by MyCalcTools, part of Ascension Digital Group.",
+    "image": "promotion/craft-fair-pin.svg",
+    "alt": "Compare craft fair cash profit, pay for your time, and break-even sales with a free calculator."
+  },
+  "instagram": {
+    "caption": "Before you book another market, check three numbers: cash profit, profit after paying yourself, and break-even sales. Our free craft fair calculator compares events and exports CSV. No account needed. Use your own sales estimates—this tool does not predict demand. Link: https://mycalctools.net/craft-fair-profit-calculator\n#CraftFair #MarketStall #HandmadeBusiness #SmallBusinessTools",
+    "format": "Adapt the original SVG to the account's supported raster format before scheduling."
+  },
+  "short_video": {
+    "duration_seconds": 18,
+    "script": "Your craft fair made 800. But what did you keep? Subtract 240 in materials, 24 in payment fees and 100 in event costs: cash profit is 436. Pay yourself 200 for ten hours and 236 remains. Compare your own market scenarios with our free calculator. These are example figures, not an earnings claim.",
+    "shots": ["0–4s: Revenue is not profit: 800 example sales", "4–10s: Subtract example costs; show 436 cash profit", "10–14s: Subtract 200 target pay; show 236", "14–18s: Show calculator URL and Free · No account"],
+    "render_status": "storyboard_only"
+  },
+  "restrictions": ["Use only accounts with a maker or small-business audience and confirmed posting permission.", "Do not claim these example figures are actual seller earnings.", "Do not report publication before the provider confirms it."]
+}
